@@ -23,7 +23,12 @@
             android:name=".TutorialSelection"
             android:label="@string/title_activity_tutorial_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Tutorial1"></activity>
+        <activity android:name=".Tutorial1" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
