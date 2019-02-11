@@ -19,7 +19,7 @@
             \n
             public class HelloWorld {\n\n
                 public static void main(String[] args) {\n\n
-                    // Prints "Hello, World" to the terminal window.\n
+                    // Print "Hello, World" to the terminal window.\n
                     System.out.println("Hello, World");\n\n
                 }\n\n
             }\n\n
@@ -111,5 +111,9 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_forum_front_page">Forum_front_page</string>
+    <string name="title_Latest">Latest</string>
+    <string name="title_Trending">Trending</string>
+    <string name="title_My_Post">My Post</string>
 
 </resources>

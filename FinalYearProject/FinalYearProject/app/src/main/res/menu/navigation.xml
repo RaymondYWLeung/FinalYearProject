@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_Latest"
+        android:title="@string/title_Latest"/>
+
+    <item
+        android:id="@+id/navigation_Trending"
+        android:title="@string/title_Trending" />
+
+    <item
+        android:id="@+id/navigation_My_Post"
+        android:title="@string/title_My_Post" />
+
+</menu>

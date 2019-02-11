@@ -24,7 +24,7 @@ public class TutorialSelection extends AppCompatActivity implements View.OnClick
 
         for(int i = 0 ; i < tutor_but.length ; i++){
             String idName = "tutorial_" + (i+1);
-            System.out.println(idName);
+            //System.out.println(idName);
             tutor_but[i] = (Button)findViewById(getResources().getIdentifier(idName, "id", getPackageName()));
             tutor_but[i].setOnClickListener(this);
         }
