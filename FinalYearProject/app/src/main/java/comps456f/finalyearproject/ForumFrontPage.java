@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ForumFrontPage extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    private TextView mTextMessage ;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
