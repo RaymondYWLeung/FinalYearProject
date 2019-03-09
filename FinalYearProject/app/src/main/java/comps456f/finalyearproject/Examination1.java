@@ -3,14 +3,19 @@ package comps456f.finalyearproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Examination1 extends AppCompatActivity implements View.OnClickListener{
 
     int score = 0;
+    Boolean check[] = new Boolean[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +35,32 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
         // Check which radio button was clicked
         switch(view.getId()) {
+            case R.id.exam1_q1a:
+                if (checked)
+                    check[0] = Boolean.FALSE;
+                break;
+            case R.id.exam1_q1b:
+                if (checked)
+                    check[0] = Boolean.FALSE;
+                break;
             case R.id.exam1_q1c:
                 if (checked)
-                    score += 1;
-                    // Pirates are the best
-                    break;
+                    check[0] = Boolean.TRUE;
+                break;
+        }
+        switch(view.getId()) {
+            case R.id.exam1_q2a:
+                if (checked)
+                    check[1] = Boolean.TRUE;
+                break;
+            case R.id.exam1_q2b:
+                if (checked)
+                    check[1] = Boolean.FALSE;
+                break;
+            case R.id.exam1_q2c:
+                if (checked)
+                    check[1] = Boolean.FALSE;
+                break;
         }
     }
 
@@ -43,8 +69,20 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
         int id = view.getId();
 
-        if(id == R.id.exam1_submit_button){
+        score = 0;
 
+        if(id == R.id.exam1_submit_button){
+            for(Boolean question:check){
+                if(question == Boolean.TRUE){
+                    score += 1;
+                }
+            }
+            Log.d("Q1", check[0] + "");
+            Log.d("Q2", check[1] + "");
+            Toast.makeText(this, "Your score is : " + score, Toast.LENGTH_SHORT).show();
+        }
+        for(Boolean question:check){
+            question = Boolean.FALSE;
         }
 
     }
