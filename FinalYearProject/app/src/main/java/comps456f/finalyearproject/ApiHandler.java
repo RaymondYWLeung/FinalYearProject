@@ -23,9 +23,12 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
+import static java.lang.Thread.sleep;
+
 public class ApiHandler {
     private String data = "";
     private JSONObject inputData = new JSONObject();
+    public static final String stringTag = "123";
 
 
     //Get Request
@@ -37,10 +40,12 @@ public class ApiHandler {
         //HTTP GET ok
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
+
             public void onResponse(JSONArray response) {
 
                 //Print all value
                 //Log.e("CheckOK", response.toString());
+
 
                 try {
                     //Print all "Name" value
@@ -48,12 +53,11 @@ public class ApiHandler {
                     for (int i=0;i<response.length();i++) {
                         JSONObject jsonObject = response.getJSONObject(i);
                         //data=jsonObject.getString("Content");
-                        data = jsonObject.toString();
+                        data = jsonObject.getString("Content");
                         data = data.replaceAll("/n","\n").replaceAll("\\\\", " ");
                         //stxt.setText(data);
                         Log.e("apihandler", data);
                     }
-
 
                     //Print individual "Name" value
                     //JSONObject jsonObject = response.getJSONObject(0);
@@ -74,7 +78,6 @@ public class ApiHandler {
         });
         request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(request);
-        Log.e("1233333",data.length()+"");
         return data;
     }
 

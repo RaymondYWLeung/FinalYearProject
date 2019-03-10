@@ -12,26 +12,77 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class Examination1 extends AppCompatActivity implements View.OnClickListener{
 
     int score = 0;
     Boolean check[] = new Boolean[2];
-    private Context context;
-    private String longQuestion;
+    String data = "";
+    String url ="http://192.168.220.23:3000/api/testing";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination1);
 
-        TextView longQuestionView = (TextView)findViewById(R.id.longQuestion);
-        context = getApplicationContext();
-        ApiHandler getQuestion = new ApiHandler();
-        longQuestion = getQuestion.getRequest(context, "http://192.168.220.23:3000/api/testing");
-        Log.e("exam 1", longQuestion);
-        longQuestionView.setText(longQuestion);
+        final TextView longQuestionView = (TextView)findViewById(R.id.longQuestion);
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        //HTTP GET ok
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+
+            public void onResponse(JSONArray response) {
+
+                //Print all value
+                //Log.e("CheckOK", response.toString());
+
+
+                try {
+                    //Print all "Name" value
+
+                    for (int i=0;i<response.length();i++) {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        //data=jsonObject.getString("Content");
+                        data = jsonObject.getString("Content");
+                        data = data.replaceAll("/n","\n").replaceAll("\\\\", " ");
+                        longQuestionView.setText(data);
+                        Log.e("apihandler", data);
+                    }
+
+                    //Print individual "Name" value
+                    //JSONObject jsonObject = response.getJSONObject(0);
+                    //data=jsonObject.getString("Name");
+                    //Log.e("Name", data);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("user",e.getMessage());
+                }
+
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Log.e("CheckFAIL", error.toString());
+            }
+        });
+        request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(request);
 
         Button submit_but = (Button)findViewById(R.id.exam1_submit_button);
         submit_but.setOnClickListener(this);
