@@ -1,5 +1,6 @@
 package comps456f.finalyearproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,11 +18,21 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     int score = 0;
     Boolean check[] = new Boolean[2];
+    private Context context;
+    private String longQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination1);
+
+        TextView longQuestionView = (TextView)findViewById(R.id.longQuestion);
+        context = getApplicationContext();
+        ApiHandler getQuestion = new ApiHandler();
+        longQuestion = getQuestion.getRequest(context, "http://192.168.220.23:3000/api/testing");
+        Log.e("exam 1", longQuestion);
+        longQuestionView.setText(longQuestion);
+
         Button submit_but = (Button)findViewById(R.id.exam1_submit_button);
         submit_but.setOnClickListener(this);
     }

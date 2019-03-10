@@ -53,10 +53,10 @@
                 android:text="String"
                 android:onClick="onRadioButtonClicked"/>
             <RadioButton android:id="@+id/exam1_q1c"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Character"
-            android:onClick="onRadioButtonClicked"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Character"
+                android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
 
         <TextView
@@ -93,6 +93,16 @@
                 android:text="Character"
                 android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/longQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingTop="10sp"/>
 
         <Button
             android:id="@+id/exam1_submit_button"
