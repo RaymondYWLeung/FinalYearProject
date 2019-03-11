@@ -1,5 +1,6 @@
 package comps456f.finalyearproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -16,11 +31,62 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     int score = 0;
     Boolean check[] = new Boolean[2];
+    String data = "";
+    String url ="http://192.168.220.18:3000/api/testing/Exam01";
+    String url2 = "http://192.168.220.18:3000/api/insert";
+    JSONObject json;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination1);
+
+        final TextView longQuestionView = (TextView)findViewById(R.id.longQuestion);
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        //HTTP GET ok
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+
+            public void onResponse(JSONArray response) {
+
+                //Print all value
+                //Log.e("CheckOK", response.toString());
+
+
+                try {
+                    //Print all "Name" value
+
+                    for (int i=0;i<response.length();i++) {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        //data=jsonObject.getString("Content");
+                        data = jsonObject.getString("Content");
+                        data = data.replaceAll("/n","\n").replaceAll("\\\\", " ");
+                        longQuestionView.setText(data);
+                        Log.e("apihandler", data);
+                    }
+
+                    //Print individual "Name" value
+                    //JSONObject jsonObject = response.getJSONObject(0);
+                    //data=jsonObject.getString("Name");
+                    //Log.e("Name", data);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("user",e.getMessage());
+                }
+
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Log.e("CheckFAIL", error.toString());
+            }
+        });
+        request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(request);
+
         Button submit_but = (Button)findViewById(R.id.exam1_submit_button);
         submit_but.setOnClickListener(this);
     }
@@ -66,6 +132,9 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        context = this.getApplicationContext();
+        ApiHandler handler = new ApiHandler();
+        handler.postRequest(context, url2);
 
         int id = view.getId();
 

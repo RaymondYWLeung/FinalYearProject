@@ -34,7 +34,7 @@ public class Tutorial1 extends AppCompatActivity implements View.OnClickListener
             //Log.d("123","123!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             //Toast.makeText(this, "Compiling", Toast.LENGTH_SHORT).show();
             SaveJava sj = new SaveJava();
-            String path = sj.saveAsJava(getString(R.string.tutorial1_hello_world_example));
+            String path = sj.saveAsJava(getString(R.string.tutorial0_hello_world_example));
             Log.d("Save_As_Java",path);
             Toast.makeText(this, path, Toast.LENGTH_SHORT).show();
             //Launcher launcher = new Launcher();
