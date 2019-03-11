@@ -13,6 +13,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.RequestFuture;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -28,8 +29,7 @@ import static java.lang.Thread.sleep;
 public class ApiHandler {
     private String data = "";
     private JSONObject inputData = new JSONObject();
-    public static final String stringTag = "123";
-
+    private String compilerReturn = "";
 
     //Get Request
     //Get exam question and answer
@@ -83,12 +83,12 @@ public class ApiHandler {
 
     //Post Request
     //Register account
-    public void postRequest(Context context, String url, JSONObject query){
+    public void postRequest(Context context, String url){
         RequestQueue queue = Volley.newRequestQueue(context);
 
         try {
-            inputData.put("name", "oscar");
-            inputData.put("password","123456");
+            inputData.put("name", "test");
+            inputData.put("password","1723");
         } catch (JSONException e) {
             Log.e("MYAPP", "unexpected JSON exception", e);
         }
@@ -101,6 +101,41 @@ public class ApiHandler {
                 try {
                     data=response.getString("status");
                     Log.e("status", data);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("user",e.getMessage());
+                }
+
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Log.e("CheckFAIL", error.toString());
+            }
+        });
+        request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(request);
+    }
+
+    //Compiler
+    public void compiler(Context context, String url, String input){
+        RequestQueue queue = Volley.newRequestQueue(context);
+
+        try {
+            inputData.put("code", input);
+        } catch (JSONException e) {
+            Log.e("MYAPP", "unexpected JSON exception", e);
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, inputData, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+                try {
+                    compilerReturn = response.getString("status");
+                    Log.e("status", compilerReturn);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

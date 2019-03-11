@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,8 +32,10 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
     int score = 0;
     Boolean check[] = new Boolean[2];
     String data = "";
-    String url ="http://192.168.220.23:3000/api/testing";
-
+    String url ="http://192.168.220.18:3000/api/testing/Exam01";
+    String url2 = "http://192.168.220.18:3000/api/insert";
+    JSONObject json;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +132,9 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        context = this.getApplicationContext();
+        ApiHandler handler = new ApiHandler();
+        handler.postRequest(context, url2);
 
         int id = view.getId();
 
