@@ -7,11 +7,15 @@ import android.text.Editable;
 import android.text.Spannable;
 import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static java.lang.Thread.sleep;
 
 public class Compiler extends AppCompatActivity {
 
@@ -44,14 +48,22 @@ public class Compiler extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
-                Spannable textSpan = editable;
-                final Pattern pattern = Pattern.compile("(public)");
-                final Matcher matcher = pattern.matcher(textSpan);
-                while (matcher.find()) {
-                    int start = matcher.start();
-                    int end = matcher.end();
-                    textSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.red)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                ForegroundColorSpan[] spannable = editable.getSpans(0, etCode.getText().length() - 1, ForegroundColorSpan.class);
+                Log.e("234",spannable.length+"");
+                if (spannable != null && spannable.length > 0) {
+                    for (int i = 0; i < spannable.length; i++) {
+                        editable.removeSpan(spannable[i]);
+                    }
                 }
+
+                CodeIDE ide = new CodeIDE();
+                String red_key_word = "\\b(public)\\b|\\b(static)\\b|(\\[\\])|\\b(new)\\|\\b(for)\\b|\\b(if)\\b" +
+                        "|\\b(else)\\b|\\b(else if)\\b|\\b(=)\\b" ;
+                String blue_key_word = "\\b(String)\\b|\\b(System)\\b|\\b(print)\\b|\\b(println)\\b" ;
+
+                ide.changeColor(editable,red_key_word,getResources().getColor(R.color.ide_red));
+                ide.changeColor(editable,blue_key_word,getResources().getColor(R.color.ide_blue));
+
 
             }
         });
