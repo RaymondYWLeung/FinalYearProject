@@ -7,15 +7,15 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_tutorial_selection">TutorialSelection</string>
 
-    //Tutorial 1
-    <string name="tutorial1_title">Introduction to Java</string>
-    <string name="tutorial1_content">Java is a general-purpose computer-programming language that is concurrent, class-based,
+    //Tutorial 0
+    <string name="tutorial0_title">Introduction to Java</string>
+    <string name="tutorial0_content">Java is a general-purpose computer-programming language that is concurrent, class-based,
             object-oriented, and specifically designed to have as few implementation dependencies as possible.
         </string>
 
     //Content 2A
-    <string name="tutorial1_content2a"><u>Let\'s look at HelloWorld.java : </u></string>
-    <string name="tutorial1_hello_world_example">
+    <string name="tutorial0_content2a"><u>Let\'s look at HelloWorld.java : </u></string>
+    <string name="tutorial0_hello_world_example">
             \n
             public class HelloWorld {\n\n
                 public static void main(String[] args) {\n\n
@@ -26,10 +26,12 @@
         </string>
 
     //Content 2B
-    <string name="tutorial1_content2b"><u>The output result should be : </u></string>
-    <string name="tutorial1_content2b_result">Hello, World</string>
-    <string name="tutorial1_content2c"><u>Now, try it youtself! : </u></string>
-    <string name="tutorial1_hello_world_temp">
+    <string name="tutorial0_content2b"><u>The output result should be : </u></string>
+    <string name="tutorial0_content2b_result">Hello, World</string>
+
+    //Content 2C
+    <string name="tutorial0_content2c"><u>Now, try it youtself! : </u></string>
+    <string name="tutorial0_hello_world_temp">
                 \n
                 public class HelloWorld {\n\n
                     public static void main(String[] args) {\n\n
@@ -39,6 +41,47 @@
                 }\n\n
             </string>
     <string name="title_activity_settings">Settings</string>
+
+
+    //Tutorial 01
+    <string name="tutorial01_title">Introduction</string>
+    <string name="tutorial01_History">History</string>
+    <string name="tutorial01_Content01">Java is a programming language, also is a platform.
+        It is create by James Gosling and Henry McGilton.It was first released by Sun Microsystem in
+        1995 and later acquired by Oracle Corporation. Java also developed in different version and
+        platforms  to  targeting different application environments, such as Java EE, Java SE and java card.</string>
+    <string name="tutorial01_Principles">Principles</string>
+    <string name="tutorial01_Content02">There were five primary goals in the creation of the Java language:\n
+        \n
+    1. It must be "simple, object-oriented, and familiar". \n
+    2. It must be "robust and secure". \n
+    3. It must be "architecture-neutral and portable". \n
+    4. It must execute with "high performance". \n
+    5. It must be "interpreted, threaded, and dynamic". \n
+    </string>
+    <string name="tutorial01_Features">Features</string>
+    <string name="tutorial01_Content03">Object-oriented: Mostly everything is define by Object,
+        which has some data and behaviour. Java can be easily extended as it is based on Object Model \n\n
+        Portable: platform independent byte code can be carried to any platform for execution \n\n
+        Robust: Java can eliminate error prone codes by emphasizing mainly on compile time error checking and runtime checking.\n
+        \nSecured: Java can develop virus-free systems, temper free system,which is null interaction with operating system and no explicit pointer
+    </string>
+
+
+    //Tutorial 02
+    <string name="tutorial02_title">“Print”statement</string>
+    <string name="tutorial02_Content01">Print different statement simply on th console
+        \nExample: “Hello World”, “Testing 1 2 3 4”
+    </string>
+    <string name="tutorial02_Content02">class MyFirstJava {\n
+    /* This program will print “Hello World” as output /* \n
+    public static void main(String args[]){ \n
+     System.out.println("Hello World!"); //Prints Hello world on console \n  }\n}
+    </string>
+    <string name="tutorial02_Content03">\nPlease ignore the class and the main function first.\n“System” class and “out” stream are used to access println method."println” means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
+    </string>
+
+
 
     <!-- Strings related to Settings -->
 

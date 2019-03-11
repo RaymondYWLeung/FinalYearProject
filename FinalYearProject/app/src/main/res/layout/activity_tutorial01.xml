@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Tutorial01">
+
+
+        <TextView
+            android:id="@+id/tutor01_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:text="@string/tutorial01_title"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tutor01_History"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_History"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tutor01_Content01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_Content01"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tutor01_Principles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_Principles"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tutor01_Content02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_Content02"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tutor01_Features"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_Features"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tutor01_Content03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial01_Content03"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</ScrollView>

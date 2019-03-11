@@ -37,7 +37,10 @@ public class TutorialSelection extends AppCompatActivity implements View.OnClick
         int id = view.getId();
 
         if(id == R.id.tutorial_1){
-            Intent act = new Intent(TutorialSelection.this,Tutorial1.class);
+            Intent act = new Intent(TutorialSelection.this,Tutorial01.class);
+            startActivity(act);
+        }else if(id == R.id.tutorial_2){
+            Intent act = new Intent(TutorialSelection.this,Tutorial02.class);
             startActivity(act);
         }
 
