@@ -2,6 +2,7 @@ package comps456f.finalyearproject;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -29,8 +30,11 @@ import static java.lang.Thread.sleep;
 public class ApiHandler {
     private String data = "";
     private JSONObject inputData = new JSONObject();
-    private String compilerReturn = "";
+    private TextView compilerReturn;
 
+    public TextView getCompilerReturn(){
+        return compilerReturn;
+    }
     //Get Request
     //Get exam question and answer
     public String getRequest(Context context, String url){
@@ -99,8 +103,8 @@ public class ApiHandler {
 
 
                 try {
-                    data=response.getString("status");
-                    Log.e("status", data);
+                    data=response.getString("out");
+                    Log.e("out", data);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -132,15 +136,14 @@ public class ApiHandler {
             @Override
             public void onResponse(JSONObject response) {
 
-
-                try {
-                    compilerReturn = response.getString("status");
-                    Log.e("status", compilerReturn);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.e("user",e.getMessage());
+                if(!response.optString("out").equals("")){
+                    compilerReturn.setText(response.optString("out"));
+                }else if(!response.optString("compileErr").equals("")){
+                    //compilerReturn = response.optString("compileErr");
+                }else if(!response.optString("runtimeErr").equals("")){
+                    //compilerReturn = response.optString("compileErr");
                 }
+                Log.e("OnResponse",response.optString("out"));
 
             }
         },new Response.ErrorListener(){
