@@ -3,5 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="red">#FF0000</color>
+
+    <color name="ide_red">#FF0000</color>
+    <color name="ide_blue">#0cd8ef</color>
+    <color name="ide_white">#ffffff</color>
+    <color name="ide_yellow">#ded375</color>
+    <color name="ide_purple">#c635f7</color>
 </resources>

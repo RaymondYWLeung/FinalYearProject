@@ -20,7 +20,7 @@
             public class HelloWorld {\n\n
                 public static void main(String[] args) {\n\n
                     // Print "Hello, World" to the terminal window.\n
-                    System.out.println("Hello, World");\n\n
+                    System.out.println(\u0022Hello, World\u0022);\n\n
                 }\n\n
             }\n\n
         </string>
