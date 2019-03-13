@@ -7,5 +7,6 @@
     <color name="ide_red">#FF0000</color>
     <color name="ide_blue">#0cd8ef</color>
     <color name="ide_white">#ffffff</color>
-    <color name="ide_test">#c635f7</color>
+    <color name="ide_yellow">#ded375</color>
+    <color name="ide_purple">#c635f7</color>
 </resources>

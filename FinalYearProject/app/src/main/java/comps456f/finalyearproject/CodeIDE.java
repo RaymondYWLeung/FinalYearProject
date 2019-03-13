@@ -1,41 +1,52 @@
 package comps456f.finalyearproject;
 
-import android.graphics.Color;
+
+import android.content.res.Resources;
 import android.text.Editable;
 import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 
+import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CodeIDE {
-   /* public String changeColor(String aCode){
-        String result = findKeyWord(0,aCode);
 
-        SpannableStringBuilder ssb = new SpannableStringBuilder(aCode);
-        ForegroundColorSpan colorSpan = new ForegroundColorSpan(
-                context.getResources()
-                        // Specify your color
-                        .getColor(R.color.your_font_color));
-        realPrice.setSpan(colorSpan,
-                0, // Start index of the single word
-                1, // End index of the single word
-                Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        yourEditText.setText(ssb);
+    public Editable editable;
+    public Resources resources;
+    public int textLength;
 
-        return result;
-    }*/
-    public String findKeyWord(int start, String aStr){
-        String keyWord = "public";
-        int i = aStr.indexOf(keyWord);
-        String s = aStr.substring(i, i + keyWord.length() + 1);
-        return s;
+    String red_key_word = "\\b(public)\\b|\\b(static)\\b|(\\[\\])|\\b(new)\\|\\b(for)\\b|\\b(if)\\b" +
+            "|\\b(else)\\b|\\b(else if)\\b|\\b(=)\\b|\\b(:)\\b" ;
+    String blue_key_word = "\\b(String)\\b|\\b(System)\\b|\\b(print)\\b|\\b(println)\\b" ;
+    String double_quote = "/u0022";
+    String yellow_key_word = "^\".*\"$";
+
+    CodeIDE(Editable editable, Resources resources,int textLength){
+        this.editable = editable;
+        this.resources = resources;
+        this.textLength = textLength;
+        clearSpan();
+        changeTextColor();
     }
 
-    public void changeColor(Editable editable, String word, int aColor){
-        MyApplication myapp = new MyApplication();
+    public void clearSpan(){
+
+        ForegroundColorSpan[] spannable = editable.getSpans(0, textLength - 1, ForegroundColorSpan.class);
+        if (spannable != null && spannable.length > 0) {
+            for (int i = 0; i < spannable.length; i++) {
+                editable.removeSpan(spannable[i]);
+            }
+        }
+    }
+
+    public void changeTextColor(){
+        applySpan(red_key_word,resources.getColor(R.color.ide_red));
+        applySpan(blue_key_word,resources.getColor(R.color.ide_blue));
+        applySpan(yellow_key_word,resources.getColor(R.color.ide_yellow));
+    }
+
+    public void applySpan(String word, int aColor){
         Spannable textSpan = editable;
         final Pattern pattern = Pattern.compile(word);
         final Matcher matcher = pattern.matcher(textSpan);

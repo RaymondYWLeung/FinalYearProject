@@ -9,6 +9,8 @@ import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,7 +19,7 @@ import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
 
-public class Compiler extends AppCompatActivity {
+public class Compiler extends AppCompatActivity implements View.OnClickListener{
 
     private EditText etCode;
 
@@ -32,41 +34,28 @@ public class Compiler extends AppCompatActivity {
         etCode = (EditText) findViewById(R.id.compiler_code);
         etCode.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                /*CodeIDE aIDE = new CodeIDE();
-                String result = aIDE.changeColor(charSequence.toString());
-                Toast.makeText(getApplication(),result,Toast.LENGTH_SHORT).show();*/
-
-
-                }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
             public void afterTextChanged(Editable editable) {
-
-                ForegroundColorSpan[] spannable = editable.getSpans(0, etCode.getText().length() - 1, ForegroundColorSpan.class);
-                Log.e("234",spannable.length+"");
-                if (spannable != null && spannable.length > 0) {
-                    for (int i = 0; i < spannable.length; i++) {
-                        editable.removeSpan(spannable[i]);
-                    }
-                }
-
-                CodeIDE ide = new CodeIDE();
-                String red_key_word = "\\b(public)\\b|\\b(static)\\b|(\\[\\])|\\b(new)\\|\\b(for)\\b|\\b(if)\\b" +
-                        "|\\b(else)\\b|\\b(else if)\\b|\\b(=)\\b" ;
-                String blue_key_word = "\\b(String)\\b|\\b(System)\\b|\\b(print)\\b|\\b(println)\\b" ;
-
-                ide.changeColor(editable,red_key_word,getResources().getColor(R.color.ide_red));
-                ide.changeColor(editable,blue_key_word,getResources().getColor(R.color.ide_blue));
-
-
+                CodeIDE ide = new CodeIDE(editable,getResources(),etCode.getText().length());
             }
         });
+
+        Button compile_but = (Button)findViewById(R.id.compile_but);
+        compile_but.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+
+        if(id == R.id.compile_but){
+            Toast.makeText(this, "Compiling", Toast.LENGTH_SHORT).show();
+        }
 
     }
 }
