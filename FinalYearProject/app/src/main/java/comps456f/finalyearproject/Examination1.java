@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,17 +34,15 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.lang.Math;
 
-public class Examination1 extends AppCompatActivity implements View.OnClickListener{
+public class Examination1 extends AppCompatActivity {
 
     int score = 0;
     int no;
-    Boolean check[] = new Boolean[2];
     String questionTitle = "";
     String questionNumber = "";
     String questionAnswer = "";
     String questionType = "";
-    String questionContentForFib = "";
-    String url ="http://192.168.221.53:3000/api/examquestion/Exam01";
+    String url = "http://192.168.221.53:3000/api/examquestion/Exam01";
     String url2 = "http://192.168.220.15:3000/api/insert";
 
     //View for fib
@@ -51,7 +50,6 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     //View for mc
     ArrayList<String> mcAns = new ArrayList<>();
-    ArrayList<RadioGroup> mcAnsGroup = new ArrayList<>();
 
     //Question
     ArrayList<FillInTheBlanks> fib = new ArrayList<>();
@@ -59,15 +57,11 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
     //Result score
     boolean resultForMc[];
-    //boolean resultForFib[];
 
     //Random question number
-    //int q1 = (int)(Math.random()*10)+1;
-    int q1 = 1;
-    int q2 = 7;
-    int q3 = 8;
-    //int q2 = (int)(Math.random()*10)+1;
-    //int q3 = (int)(Math.random()*10)+1;
+    int q1 = (int) (Math.random() * 10) + 1;
+    int q2 = (int) (Math.random() * 10) + 1;
+    int q3 = (int) (Math.random() * 10) + 1;
 
 
     @Override
@@ -86,9 +80,13 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
         exam.addView(button);
         */
 
+        Log.e("q1", q1 + "");
+        Log.e("q2", q2 + "");
+        Log.e("q3", q3 + "");
+
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        final LinearLayout exam = (LinearLayout)findViewById(R.id.exam01);
+        final LinearLayout exam = (LinearLayout) findViewById(R.id.exam01);
 
         final Context appContext = getApplicationContext();
 
@@ -102,54 +100,49 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
                 try {
 
 
-                    for (int questionNo=0;questionNo<response.length();questionNo++) {
+                    for (int questionNo = 0; questionNo < response.length(); questionNo++) {
                         JSONObject jsonObject = response.getJSONObject(questionNo);
                         questionNumber = jsonObject.getString("QuestionNumber");
                         questionType = jsonObject.getString("QuestionType");
                         questionTitle = jsonObject.getString("QuestionTitle");
-                        questionTitle = questionTitle.replaceAll("/n","\n").replaceAll("/t", "\t").replaceAll("\\\\", " ");
+                        questionTitle = questionTitle.replaceAll("/n", "\n").replaceAll("/t", "\t").replaceAll("\\\\", " ");
                         questionAnswer = jsonObject.getString("Answer");
 
-                        if(Integer.toString(q1).equals(questionNumber) || Integer.toString(q2).equals(questionNumber) || Integer.toString(q3).equals(questionNumber)){
-                            if(questionType.equals("FillIn")){
-                                Log.e("testing",new FillInTheBlanks(questionNumber, questionType, questionTitle, questionAnswer).getQuestionTitle());
+                        if (Integer.toString(q1).equals(questionNumber) || Integer.toString(q2).equals(questionNumber) || Integer.toString(q3).equals(questionNumber)) {
+                            if (questionType.equals("FillIn")) {
                                 fib.add(new FillInTheBlanks(questionNumber, questionType, questionTitle, questionAnswer));
 
-                            }else if(questionType.equals("MC")){
+                            } else if (questionType.equals("MC")) {
                                 JSONArray contentArray = jsonObject.getJSONArray("Choices");
-                                Log.e("length", contentArray.length()+"");
-                                ArrayList<String> questionChoicesForMc = new ArrayList<String>();
-                                if(contentArray.length() != 0){
-                                    for(int questionChoice=0; questionChoice<contentArray.length(); questionChoice++){
+                                ArrayList<String> questionChoicesForMc = new ArrayList<>();
+                                if (contentArray.length() != 0) {
+                                    for (int questionChoice = 0; questionChoice < contentArray.length(); questionChoice++) {
 
                                         questionChoicesForMc.add(contentArray.getString(questionChoice));
-                                        Log.e("choice", contentArray.getString(questionChoice));
                                     }
-                                    //Log.e("size", mc.get(i).getChoices().size()+"");
                                 }
-                                Log.e("choiceSize",new MultipleChoice(questionNumber, questionType, questionTitle, questionChoicesForMc, questionAnswer).getChoices().size()+"");
                                 mc.add(new MultipleChoice(questionNumber, questionType, questionTitle, questionChoicesForMc, questionAnswer));
                             }
                         }
                     }
-                    Log.e("AIOOB", fib.size()+"");
                     resultForMc = new boolean[mc.size()];
-                    for(int mcCount=0; mcCount<resultForMc.length; mcCount++){
+                    for (int mcCount = 0; mcCount < resultForMc.length; mcCount++) {
                         resultForMc[mcCount] = Boolean.FALSE;
                     }
 
-                    /*resultForFib = new boolean[fib.size()];
-                    for(int fibCount=0; fibCount<resultForFib.length; fibCount++){
-                        resultForFib[fibCount] = Boolean.FALSE;
-                    }*/
-
+                    //Text View of the title
+                    TextView title = new TextView(appContext);
+                    title.setText("Exam01");
+                    title.setGravity(Gravity.TOP | Gravity.CENTER);
+                    title.setTextColor(Color.BLACK);
+                    title.setTextSize(42);
+                    exam.addView(title);
 
                     //Fib
                     int fibIdCount = 200;
-                    Log.e("fibSize", fib.size()+"");
-                    for(int i=0; i<fib.size(); i++){
+                    for (int i = 0; i < fib.size(); i++) {
                         TextView view = new TextView(appContext);
-                        EditText edit= new EditText(appContext);
+                        EditText edit = new EditText(appContext);
 
                         //textview
                         view.setText(fib.get(i).getQuestionTitle());
@@ -159,7 +152,6 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
                         //editText
                         edit.setBackgroundColor(Color.GRAY);
                         edit.setId(fibIdCount);
-                        Log.e("fibCount", fibIdCount+"");
 
                         fibAns.add(fib.get(i).getAnswer());
                         exam.addView(view);
@@ -167,63 +159,59 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
                         fibIdCount++;
                     }
 
-                    //Mc
-                    Log.e("mcSize", mc.size()+"");
+                    //MC Question
                     int mcIdCount = 100;
-                    for(int i=0; i<mc.size(); i++){
+                    for (int i = 0; i < mc.size(); i++) {
                         TextView view = new TextView(appContext);
                         RadioGroup rg = new RadioGroup(appContext);
 
+                        //View
                         view.setText(mc.get(i).getQuestionTitle());
                         view.setTextColor(Color.BLACK);
                         view.setTextSize(14);
 
-                        for(int j=0; j<mc.get(i).getChoices().size(); j++){
-                            mcIdCount = mcIdCount+j;
-
+                        //Create radio button and radio group
+                        for (int j = 0; j < mc.get(i).getChoices().size(); j++) {
+                            mcIdCount = mcIdCount + j;
                             RadioButton rb = new RadioButton(appContext);
                             rb.setText(mc.get(i).getChoices().get(j));
                             rb.setTextColor(Color.BLACK);
                             rb.setId(mcIdCount);
-                            rb.setTag("q"+i+"choice"+j);
+                            rb.setTag("q" + i + "choice" + j);
                             rb.setButtonTintList(ColorStateList.valueOf(Color.BLACK));
                             rb.setTextSize(14);
                             rg.addView(rb);
 
                         }
-                        mcIdCount = 100+10;
+                        mcIdCount = 100 + 10;
                         mcAns.add(mc.get(i).getAnswer());
                         rg.setId(i);
                         no = i;
+
+                        //Radio Button Listener
                         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                             @Override
                             public void onCheckedChanged(RadioGroup radioGroup, int z) {
-                                RadioButton select = (RadioButton)findViewById(z);
+                                RadioButton select = (RadioButton) findViewById(z);
                                 int selectedId = radioGroup.getId();
-                                for(int j=0; j<mcAns.size(); j++){
-
-                                    //Log.e("Onclick Loop",mcAns.get(j) + " : " + select.getText());
-                                    if(mcAns.get(j).equals(select.getText())){
+                                for (int j = 0; j < mcAns.size(); j++) {
+                                    //Correct
+                                    if (mcAns.get(j).equals(select.getText())) {
                                         resultForMc[selectedId] = Boolean.TRUE;
                                         break;
-                                    }else if(!mcAns.get(j).equals(select.getText())){
+                                    //Fail
+                                    } else if (!mcAns.get(j).equals(select.getText())) {
                                         resultForMc[selectedId] = Boolean.FALSE;
                                     }
                                 }
                             }
                         });
-                        //mcAnsGroup.add(rg);
                         exam.addView(view);
                         exam.addView(rg);
                     }
-                    //Check answer
-                    //RadioGroup mcAnsGroup = (RadioGroup)findViewById(0);
-                    //Log.e("Selection", ((RadioButton) findViewById(mcAnsGroup.getCheckedRadioButtonId())).getText().toString());
-
-
 
                     //Submit button
-                    int submitButId=999;
+                    int submitButId = 999;
                     Button submitBut = new Button(appContext);
                     submitBut.setText("Submit");
                     exam.addView(submitBut);
@@ -232,22 +220,25 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void onClick(View view) {
                             score = 0;
-                            for(int mcArray=0; mcArray<resultForMc.length; mcArray++){
-                                if(resultForMc[mcArray] == Boolean.TRUE){
+
+                            //Check mcArray
+                            for (int mcArray = 0; mcArray < resultForMc.length; mcArray++) {
+                                if (resultForMc[mcArray] == Boolean.TRUE) {
                                     score++;
                                 }
                             }
-                            for(int fibArray=0; fibArray<fibAns.size(); fibArray++){
-                                int fibId = fibArray+200;
-                                EditText edit = (EditText)findViewById(fibId);
-                                Log.e("fillAns",fibAns.get(fibArray));
-                                Log.e("editText", edit.getText().toString());
-                                if(fibAns.get(fibArray).equals(edit.getText().toString())){
+
+                            //Check fillInTheBlanks answer
+                            for (int fibArray = 0; fibArray < fibAns.size(); fibArray++) {
+                                int fibId = fibArray + 200;
+                                EditText edit = (EditText) findViewById(fibId);
+                                if (fibAns.get(fibArray).equals(edit.getText().toString())) {
                                     score++;
                                 }
                             }
+
                             int id = view.getId();
-                            if(id == 999){
+                            if (id == 999) {
                                 Toast.makeText(appContext, "Your score is : " + score, Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -256,83 +247,18 @@ public class Examination1 extends AppCompatActivity implements View.OnClickListe
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.e("user",e.getMessage());
+                    Log.e("user", e.getMessage());
                 }
 
             }
-        },new Response.ErrorListener(){
+        }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error){
+            public void onErrorResponse(VolleyError error) {
                 Log.e("CheckFAIL", error.toString());
             }
         });
         request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(request);
-
-        Button submit_but = (Button)findViewById(R.id.exam1_submit_button);
-        submit_but.setOnClickListener(this);
-    }
-
-
-    public void onRadioButtonClicked(View view) {
-
-        RadioGroup question1 = (RadioGroup) findViewById(R.id.exam1_q1rg);
-        String answer1 = ((RadioButton) findViewById(question1.getCheckedRadioButtonId())).getText().toString();
-
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.exam1_q1a:
-                if (checked)
-                    check[0] = Boolean.FALSE;
-                break;
-            case R.id.exam1_q1b:
-                if (checked)
-                    check[0] = Boolean.FALSE;
-                break;
-            case R.id.exam1_q1c:
-                if (checked)
-                    check[0] = Boolean.TRUE;
-                break;
-        }
-        switch(view.getId()) {
-            case R.id.exam1_q2a:
-                if (checked)
-                    check[1] = Boolean.TRUE;
-                break;
-            case R.id.exam1_q2b:
-                if (checked)
-                    check[1] = Boolean.FALSE;
-                break;
-            case R.id.exam1_q2c:
-                if (checked)
-                    check[1] = Boolean.FALSE;
-                break;
-        }
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        int id = view.getId();
-
-        score = 0;
-
-        if(id == R.id.exam1_submit_button){
-            for(Boolean question:check){
-                if(question == Boolean.TRUE){
-                    score += 1;
-                }
-            }
-            Log.d("Q1", check[0] + "");
-            Log.d("Q2", check[1] + "");
-            //Toast.makeText(this, "Your score is : " + score, Toast.LENGTH_SHORT).show();
-        }
-        for(Boolean question:check){
-            question = Boolean.FALSE;
-        }
 
     }
 }
