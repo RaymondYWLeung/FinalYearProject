@@ -37,7 +37,7 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
     private EditText etCode;
     private TextView output;
 
-    String compile_url = "http://192.168.0.106:3000/api/compile";
+    String compile_url = "https://raymondsfypapi.herokuapp.com/api/compile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
