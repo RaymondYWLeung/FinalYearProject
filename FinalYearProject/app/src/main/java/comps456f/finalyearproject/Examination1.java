@@ -60,11 +60,12 @@ public class Examination1 extends AppCompatActivity {
     boolean resultForMc[];
 
     //Random question number
-    int q1 = (int) (Math.random() * 11) + 1;
-    int q2 = (int) (Math.random() * 11) + 1;
-    int q3 = (int) (Math.random() * 11) + 1;
-    int q4 = (int) (Math.random() * 11) + 1;
-    int q5 = (int) (Math.random() * 11) + 1;
+    int q1 = (int) (Math.random() * 15) + 1;
+    int q2 = (int) (Math.random() * 15) + 1;
+    int q3 = (int) (Math.random() * 15) + 1;
+    int q4 = (int) (Math.random() * 15) + 1;
+    int q5 = (int) (Math.random() * 15) + 1;
+    int q6 = (int) (Math.random() * 15) + 1;
 
 
     @Override
@@ -114,7 +115,7 @@ public class Examination1 extends AppCompatActivity {
                         questionAnswer = jsonObject.getString("Answer");
 
                         if (Integer.toString(q1).equals(questionNumber) || Integer.toString(q2).equals(questionNumber) || Integer.toString(q3).equals(questionNumber)
-                                || Integer.toString(q4).equals(questionNumber)|| Integer.toString(q5).equals(questionNumber)) {
+                                || Integer.toString(q4).equals(questionNumber)|| Integer.toString(q5).equals(questionNumber) || Integer.toString(q6).equals(questionNumber)) {
                             if (questionType.equals("FillIn")) {
                                 fib.add(new FillInTheBlanks(questionNumber, questionType, questionTitle, questionAnswer));
 
