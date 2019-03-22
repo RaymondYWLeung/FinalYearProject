@@ -36,13 +36,14 @@ import java.lang.Math;
 
 public class Examination1 extends AppCompatActivity {
 
+    //common variable
     int score = 0;
     int no;
     String questionTitle = "";
     String questionNumber = "";
     String questionAnswer = "";
     String questionType = "";
-    String url = "http://192.168.221.53:3000/api/examquestion/Exam01";
+    String url = "https://raymondsfypapi.herokuapp.com/api/examquestion/Exam01";
     String url2 = "http://192.168.220.15:3000/api/insert";
 
     //View for fib
@@ -59,9 +60,11 @@ public class Examination1 extends AppCompatActivity {
     boolean resultForMc[];
 
     //Random question number
-    int q1 = (int) (Math.random() * 10) + 1;
-    int q2 = (int) (Math.random() * 10) + 1;
-    int q3 = (int) (Math.random() * 10) + 1;
+    int q1 = (int) (Math.random() * 11) + 1;
+    int q2 = (int) (Math.random() * 11) + 1;
+    int q3 = (int) (Math.random() * 11) + 1;
+    int q4 = (int) (Math.random() * 11) + 1;
+    int q5 = (int) (Math.random() * 11) + 1;
 
 
     @Override
@@ -83,6 +86,8 @@ public class Examination1 extends AppCompatActivity {
         Log.e("q1", q1 + "");
         Log.e("q2", q2 + "");
         Log.e("q3", q3 + "");
+        Log.e("q4", q4 + "");
+        Log.e("q5", q5 + "");
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -108,7 +113,8 @@ public class Examination1 extends AppCompatActivity {
                         questionTitle = questionTitle.replaceAll("/n", "\n").replaceAll("/t", "\t").replaceAll("\\\\", " ");
                         questionAnswer = jsonObject.getString("Answer");
 
-                        if (Integer.toString(q1).equals(questionNumber) || Integer.toString(q2).equals(questionNumber) || Integer.toString(q3).equals(questionNumber)) {
+                        if (Integer.toString(q1).equals(questionNumber) || Integer.toString(q2).equals(questionNumber) || Integer.toString(q3).equals(questionNumber)
+                                || Integer.toString(q4).equals(questionNumber)|| Integer.toString(q5).equals(questionNumber)) {
                             if (questionType.equals("FillIn")) {
                                 fib.add(new FillInTheBlanks(questionNumber, questionType, questionTitle, questionAnswer));
 
@@ -131,18 +137,23 @@ public class Examination1 extends AppCompatActivity {
                     }
 
                     //Text View of the title
+                    TextView br = new TextView(appContext);
+                    br.setText("");
+                    br.setTextSize(20);
+                    exam.addView(br);
                     TextView title = new TextView(appContext);
-                    title.setText("Exam01");
+                    title.setText("Exam 1");
                     title.setGravity(Gravity.TOP | Gravity.CENTER);
                     title.setTextColor(Color.BLACK);
                     title.setTextSize(42);
                     exam.addView(title);
 
                     //Fib
-                    int fibIdCount = 200;
+                    int fibIdCount = 500;
                     for (int i = 0; i < fib.size(); i++) {
                         TextView view = new TextView(appContext);
                         EditText edit = new EditText(appContext);
+                        TextView newline = new TextView(appContext);
 
                         //textview
                         view.setText(fib.get(i).getQuestionTitle());
@@ -153,9 +164,14 @@ public class Examination1 extends AppCompatActivity {
                         edit.setBackgroundColor(Color.GRAY);
                         edit.setId(fibIdCount);
 
+                        //newline
+                        newline.setTextSize(20);
+                        newline.setText("");
+
                         fibAns.add(fib.get(i).getAnswer());
                         exam.addView(view);
                         exam.addView(edit);
+                        exam.addView(newline);
                         fibIdCount++;
                     }
 
@@ -164,11 +180,16 @@ public class Examination1 extends AppCompatActivity {
                     for (int i = 0; i < mc.size(); i++) {
                         TextView view = new TextView(appContext);
                         RadioGroup rg = new RadioGroup(appContext);
+                        TextView newline = new TextView(appContext);
 
                         //View
                         view.setText(mc.get(i).getQuestionTitle());
                         view.setTextColor(Color.BLACK);
                         view.setTextSize(14);
+
+                        //newline
+                        newline.setTextSize(20);
+                        newline.setText("");
 
                         //Create radio button and radio group
                         for (int j = 0; j < mc.get(i).getChoices().size(); j++) {
@@ -195,11 +216,13 @@ public class Examination1 extends AppCompatActivity {
                                 RadioButton select = (RadioButton) findViewById(z);
                                 int selectedId = radioGroup.getId();
                                 for (int j = 0; j < mcAns.size(); j++) {
-                                    //Correct
+
+                                    //check correct
                                     if (mcAns.get(j).equals(select.getText())) {
                                         resultForMc[selectedId] = Boolean.TRUE;
                                         break;
-                                    //Fail
+
+                                    //check incorrect
                                     } else if (!mcAns.get(j).equals(select.getText())) {
                                         resultForMc[selectedId] = Boolean.FALSE;
                                     }
@@ -208,29 +231,35 @@ public class Examination1 extends AppCompatActivity {
                         });
                         exam.addView(view);
                         exam.addView(rg);
+                        exam.addView(newline);
                     }
 
-                    //Submit button
+                    //submit button
                     int submitButId = 999;
                     Button submitBut = new Button(appContext);
                     submitBut.setText("Submit");
                     exam.addView(submitBut);
                     submitBut.setId(submitButId);
+
+                    //grade of score
+                    final int excellent = (fib.size() + mcAns.size()) * 2 / 3;
+                    final int pass = (fib.size() + mcAns.size()) * 4 / 10;
+
                     submitBut.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             score = 0;
 
-                            //Check mcArray
+                            //check mcArray
                             for (int mcArray = 0; mcArray < resultForMc.length; mcArray++) {
                                 if (resultForMc[mcArray] == Boolean.TRUE) {
                                     score++;
                                 }
                             }
 
-                            //Check fillInTheBlanks answer
+                            //check fillInTheBlanks answer
                             for (int fibArray = 0; fibArray < fibAns.size(); fibArray++) {
-                                int fibId = fibArray + 200;
+                                int fibId = fibArray + 500;
                                 EditText edit = (EditText) findViewById(fibId);
                                 if (fibAns.get(fibArray).equals(edit.getText().toString())) {
                                     score++;
@@ -239,7 +268,21 @@ public class Examination1 extends AppCompatActivity {
 
                             int id = view.getId();
                             if (id == 999) {
-                                Toast.makeText(appContext, "Your score is : " + score, Toast.LENGTH_SHORT).show();
+                                Toast toast;
+                                if(score >= excellent){
+                                    toast = Toast.makeText(appContext, "Well Done, Your score is : " + score + ".\nYou look understand it well", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER,0,0);
+                                    toast.show();
+                                }else if(score < excellent && score >= pass){
+                                    toast = Toast.makeText(appContext, "Well, Your score is : " + score + ".\nYou should study more and make sure you understand the concept", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER,0,0);
+                                    toast.show();
+                                }else if(score < pass){
+                                    toast = Toast.makeText(appContext, "Your score is : " + score + ".\nYou must study well. Your concept is not good at all", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER,0,0);
+                                    toast.show();
+                                }
+
                             }
                         }
                     });
