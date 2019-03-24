@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minLines="8"
-            android:text="Result: \nHello, World"
+            android:text="Press COMPILE to start compile the java program"
             android:textColor="@android:color/white"
             android:background="#222222"
             android:textSize="16sp"

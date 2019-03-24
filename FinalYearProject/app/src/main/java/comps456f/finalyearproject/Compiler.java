@@ -1,5 +1,6 @@
 package comps456f.finalyearproject;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
 
     private EditText etCode;
     private TextView output;
+    private ProgressDialog progressDialog;
 
     String compile_url = "https://raymondsfypapi.herokuapp.com/api/compile";
 
@@ -79,7 +81,6 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
         int id = view.getId();
 
         if(id == R.id.compile_but){
-            Toast.makeText(this, "Compiling", Toast.LENGTH_SHORT).show();
 
             RequestQueue queue = Volley.newRequestQueue(appContext);
 
@@ -101,29 +102,22 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
                         output.setText(response.optString("runtimeErr"));
                     }
                     Log.e("OnResponse",response.optString("out"));
+                    progressDialog.dismiss();
 
                 }
             },new Response.ErrorListener(){
                 @Override
                 public void onErrorResponse(VolleyError error){
                     Log.e("CheckFAIL", error.toString());
+                    progressDialog.dismiss();
                 }
             });
             request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             queue.add(request);
 
-            /*Context context = this.getApplicationContext();
-            ApiHandler handler = new ApiHandler();
-            handler.compiler(context, compile_url,etCode.getText().toString());
-
-            output = handler.getCompilerReturn();*/
-
-            //Log.e("Compiler","???");
-            //Log.e("Compiler",handler.getCompilerReturn());
-            //output.setText(handler.getCompilerReturn());
-            //Log.e("Compiler",output.getText().toString());
-            //Log.e("Compiler","!!!");
-
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Compiling ....");
+            progressDialog.show();
 
         }
 
