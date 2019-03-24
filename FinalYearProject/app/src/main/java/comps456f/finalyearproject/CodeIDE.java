@@ -4,7 +4,10 @@ package comps456f.finalyearproject;
 import android.content.res.Resources;
 import android.text.Editable;
 import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
+import android.widget.EditText;
 
 import java.net.URL;
 import java.util.regex.Matcher;
@@ -21,6 +24,40 @@ public class CodeIDE {
     String blue_key_word = "\\b(String)\\b|\\b(System)\\b|\\b(print)\\b|\\b(println)\\b" ;
     String double_quote = "/u0022";
     String yellow_key_word = "^\".*\"$";
+
+    //Before Text Changed
+
+    CodeIDE(Editable editable, Resources resources){
+        this.editable = editable;
+        this.resources = resources;
+        setTextColor();
+    }
+
+    public Spannable setTextColor(){
+        Spannable textSpan = editable;
+        changeTextColor(textSpan);
+        return textSpan;
+    }
+
+    public void applySpan(String word, int aColor , Spannable textSpan){
+        final Pattern pattern = Pattern.compile(word);
+        final Matcher matcher = pattern.matcher(textSpan);
+        while (matcher.find()) {
+            int start = matcher.start();
+            int end = matcher.end();
+            textSpan.setSpan(new ForegroundColorSpan(aColor), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+    }
+
+    public void changeTextColor(Spannable textSpan){
+        applySpan(red_key_word,resources.getColor(R.color.ide_red),textSpan);
+        applySpan(blue_key_word,resources.getColor(R.color.ide_blue),textSpan);
+        applySpan(yellow_key_word,resources.getColor(R.color.ide_yellow),textSpan);
+    }
+
+
+    //After Text Changed
+
 
     CodeIDE(Editable editable, Resources resources,int textLength){
         this.editable = editable;

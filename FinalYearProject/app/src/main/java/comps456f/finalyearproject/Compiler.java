@@ -48,6 +48,7 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
         getSupportActionBar().setTitle("Compiler");
 
         etCode = (EditText) findViewById(R.id.compiler_code);
+        new CodeIDE(etCode.getText(),getResources());
         etCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -57,7 +58,7 @@ public class Compiler extends AppCompatActivity implements View.OnClickListener{
 
             @Override
             public void afterTextChanged(Editable editable) {
-                CodeIDE ide = new CodeIDE(editable,getResources(),etCode.getText().length());
+                new CodeIDE(editable,getResources(),etCode.getText().length());
             }
         });
 
