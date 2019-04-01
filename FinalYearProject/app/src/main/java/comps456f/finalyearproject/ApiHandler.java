@@ -125,7 +125,6 @@ public class ApiHandler {
     //Compiler
     public void compiler(Context context, String url, String input){
         RequestQueue queue = Volley.newRequestQueue(context);
-
         try {
             inputData.put("code", input);
         } catch (JSONException e) {
@@ -137,13 +136,15 @@ public class ApiHandler {
             public void onResponse(JSONObject response) {
 
                 if(!response.optString("out").equals("")){
-                    compilerReturn.setText(response.optString("out"));
+                    data = response.optString("out");
                 }else if(!response.optString("compileErr").equals("")){
-                    //compilerReturn = response.optString("compileErr");
+                    data = response.optString("compileErr");
                 }else if(!response.optString("runtimeErr").equals("")){
-                    //compilerReturn = response.optString("compileErr");
+                    data = response.optString("runtimeErr");
                 }
                 Log.e("OnResponse",response.optString("out"));
+
+
 
             }
         },new Response.ErrorListener(){
