@@ -13,7 +13,7 @@
         tools:context=".Tutorial03">
 
         <TextView
-            android:id="@+id/tutor05_title"
+            android:id="@+id/tutor03_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="serif-monospace"
@@ -24,12 +24,36 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tutor05_Content01"
+            android:id="@+id/tutor03_Content01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial05_Content01"
+            android:text="@string/tutorial03_Content01"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tutor03_Content02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial03_Content02"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tutor03_Content03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial03_Content03"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
@@ -39,17 +63,17 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/comp_op"
+            android:src="@drawable/arith_op"
             android:layout_gravity="center"
             />
 
         <TextView
-            android:id="@+id/tutor05_Content02"
+            android:id="@+id/tutor03_Content04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial05_Content02"
+            android:text="@string/tutorial03_Content04"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
@@ -59,9 +83,21 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/logic_op"
+            android:src="@drawable/assi_op"
             android:layout_gravity="center"
             />
+
+        <TextView
+            android:id="@+id/tutor03_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

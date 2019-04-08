@@ -10,7 +10,7 @@
     //Tutorial 0
     <string name="tutorial0_title">Introduction to Java</string>
     <string name="tutorial0_content">Java is a general-purpose computer-programming language that is concurrent, class-based,
-            object-oriented, and specifically designed to have as few implementation dependencies as possible.
+        object-oriented, and specifically designed to have as few implementation dependencies as possible.
         </string>
 
     //Content 2A
@@ -19,11 +19,34 @@
             \n
             public class HelloWorld {\n\n
                 public static void main(String[] args) {\n\n
-                    // Print "Hello, World" to the terminal window.\n
+                    // Print \u0022Hello, World\u0022 to the terminal window.\n
                     System.out.println(\u0022Hello, World\u0022);\n\n
+                    // Print Hello, World to the terminal window.\n
+                    System.out.println(&quot;Hello, World&quot;);\n\n
                 }\n\n
             }\n\n
         </string>
+    <string name="tutorial0_Testing_example">
+        \n
+        public class HelloWorld {\n\n
+        public static void main(String[] args) {\n\n
+        // Print \u0022Testing1234\u0022 as output.\n
+        System.out.println(\u0022Hello, World\u0022);\n\n
+        // Print statement to the terminal window.\n
+        System.out.println(&quot;Testing 1 2 3 4&quot;);\n\n
+        }\n\n
+        }\n\n
+    </string>
+    <string name="tutorial0_FormattedJava_example">public class FormattedJava{ \n
+    /* This program will print “Testing 1 2 3 4” as output /* \n
+    public static void main(String args[]){ \n
+    int x = 100; \n System.out.printf(\u0022Printing simple integer: x = %d\n\u0022, x);\n
+    // this will print it up to 2 decimal places\n
+    System.out.printf(\u0022Formatted with precison: PI = %.2f\n\u0022, Math.PI);\n
+    float n = 5.2f;// automatically appends zero to the rightmost part of decimal\n
+    System.out.printf(\u0022Formatted to specific width: n = %.4f\n\u0022, n);\n
+     }\n
+    </string>
 
     //Content 2B
     <string name="tutorial0_content2b"><u>The output result should be : </u></string>
@@ -31,15 +54,14 @@
 
     //Content 2C
     <string name="tutorial0_content2c"><u>Now, try it youtself! : </u></string>
-    <string name="tutorial0_hello_world_temp">
-                \n
+    <string name="tutorial0_hello_world_temp">\n
                 public class HelloWorld {\n\n
                     public static void main(String[] args) {\n\n
-                        // Prints "Hello, World" to the terminal window.\n
+                        // Prints &quot;Hello, World&quot; to the terminal window.\n
                         System.out.println(______________________);\n\n
                     }\n\n
                 }\n\n
-            </string>
+    </string>
     <string name="title_activity_settings">Settings</string>
 
 
@@ -51,35 +73,231 @@
         1995 and later acquired by Oracle Corporation. Java also developed in different version and
         platforms  to  targeting different application environments, such as Java EE, Java SE and java card.</string>
     <string name="tutorial01_Principles">Principles</string>
-    <string name="tutorial01_Content02">There were five primary goals in the creation of the Java language:\n
-        \n
-    1. It must be "simple, object-oriented, and familiar". \n
-    2. It must be "robust and secure". \n
-    3. It must be "architecture-neutral and portable". \n
-    4. It must execute with "high performance". \n
-    5. It must be "interpreted, threaded, and dynamic". \n
+    <string name="tutorial01_Content02">There were 5 goals in the creation of the Java language:\n\n
+    1. It must be &quot;simple, object-oriented, and familiar&quot;. \n
+    2. It must be &quot;robust and secure&quot;. \n
+    3. It must be &quot;architecture-neutral and portable&quot;. \n
+    4. It must execute with &quot;high performance.&quot; \n
+    5. It must be &quot;interpreted, threaded, and dynamic&quot;. \n
     </string>
     <string name="tutorial01_Features">Features</string>
     <string name="tutorial01_Content03">Object-oriented: Mostly everything is define by Object,
-        which has some data and behaviour. Java can be easily extended as it is based on Object Model \n\n
-        Portable: platform independent byte code can be carried to any platform for execution \n\n
-        Robust: Java can eliminate error prone codes by emphasizing mainly on compile time error checking and runtime checking.\n
-        \nSecured: Java can develop virus-free systems, temper free system,which is null interaction with operating system and no explicit pointer
+        which has some data and behaviour. Java can be easily extended as it is based on Object Model \n\nPortable: platform independent byte code can be carried to any platform for execution \n\nRobust: Java can eliminate error prone codes by emphasizing mainly on compile time error checking and runtime checking.\n
+        \nSecured: Java can develop virus-free systems, temper free system,which is null interaction with operating system and no explicit pointer\n\n
     </string>
 
 
-    //Tutorial 02
-    <string name="tutorial02_title">“Print”statement</string>
-    <string name="tutorial02_Content01">Print different statement simply on th console
-        \nExample: “Hello World”, “Testing 1 2 3 4”
+
+
+    //Tutorial 02a
+    <string name="tutorial02_title">&quot;Print&quot; statement,Variable type and Syntax</string>
+    <string name="tutorial02_Content01">Print different statement simply on the console\n
+        Example: &quot;Hello World&quot;, &quot;Testing 1 2 3 4&quot;
     </string>
-    <string name="tutorial02_Content02">class MyFirstJava {\n
-    /* This program will print “Hello World” as output /* \n
+    <string name="tutorial02_Content02">
+     System.out.printf(&quot;sth&quot;); will print multiple arguments between quotes on same line.\n
+        System.out.println(&quot;sth&quot;); will print what between quotes &quot; &quot;and move printing cursor to next line.\n
+        System.out.print (&quot;sth&quot;); will print what is between quotes, leave printing cursor on same line.
+    </string>
+    <string name="tutorial02_Firstjava_example">class MyFirstJava{\n\n
+    //This program will print Hello World as output\n
     public static void main(String args[]){ \n
-     System.out.println("Hello World!"); //Prints Hello world on console \n  }\n}
+        System.out.println(&quot;Hello World!&quot;);\n
+        //Prints Hello world on console
+        \n\n\t\t}
+        \n\t}
     </string>
-    <string name="tutorial02_Content03">\nPlease ignore the class and the main function first.\n“System” class and “out” stream are used to access println method."println” means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
+    <string name="tutorial02_Content03">\nPlease ignore the class and the main function first.\n
+        &quot;System&quot; class and &quot;out&quot; stream are used to access println method.
+        &quot;println&quot; means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
     </string>
+    <string name="tutorial02_Testing_example">
+        \npublic class TestingJava {\n\n
+        /* This program will print “Testing 1 2 3 4” as output /* \n
+        public static void main(String[] args) {\n
+        System.out.println(&quot;Testing 1 2 3 4&quot;);\n
+        //Prints on console and move to next line
+        \n\n\t\t}
+        \n\t}
+    </string>
+    <string name="tutorial02_empty_space">So let us see the formatted java example</string>
+    <string name="tutorial02_FormattedJava_example">public class FormattedJava{\n\n
+        /* This program will print formatted value as output*/\n
+        public static void main(String args[]){\n
+        \t\tint x = 100;\n
+        \tSystem.out.printf(\u0022 Integer: x = %d\u0022,x);\n\n
+        //This will print it up to 2 decimal places\n
+        \tSystem.out.printf(\u0022Format with precison:PI = %.2f\u0022,Math.PI);\n
+        \n\t\tfloat n = 5.2f;\n
+        //auto appends zero to rightmost part of decimal\n
+        \tSystem.out.printf(\u0022Format specific width:n = %.4f\u0022,n);
+        \n\n\t\t\t}
+        \n\t}
+    </string>
+
+
+
+
+    //Tutorial 02b
+    <string name="tutorial02_title2">Variable type</string>
+    <string name="tutorial02_Content04">Variables are containers that contain the data in different types.Java have the following variable types:\n\n
+        A.   boolean: contains true or false value in it.\n
+        B.   int: contains integer in it.\n
+        C.   float: store floating point numbers, decimals also.\n
+        D.   double: store fractional numbers.\n
+        E:   char: cointain a character in this type.\n
+        F:   string: store a text or an sentence in it.\n
+    </string>
+    <string name="tutorial02_Content05">Syntax of declare variable:\n
+        [data type] [variable name] = [value];
+    </string>
+    <string name="tutorial02_Content06">Type Casting is an action that assign a variable from one type to another type.There are two types of casting in java,they are widening casting and narrowing casting\n</string>
+    <string name="tutorial02_title3">1.Widening Casting</string>
+    <string name="tutorial02_Content07">Widening conversion takes place when two data types are automatically converted.This happens when\n
+    a)The two data types are compatible.\n
+        b)When we assign value of a smaller data type to a bigger data type.</string>
+    <string name="tutorial02_myclass">public class MyClass{\n
+        public static void main(String[] args){\n\n
+        \tint myInt = 9;\n
+        \tdouble myDouble = myInt;\n
+        //Automatic casting: int to double\n
+        System.out.println(myInt);//Outputs 9\n
+        System.out.println(myDouble);//Outputs 9.0
+        \n\n\t\t\t}
+        \n\t\t}
+    </string>
+    <string name="tutorial02_title4">2.Narrowing Casting</string>
+    <string name="tutorial02_Content08">If we want to assign a value of larger data type to a smaller data type we perform explicit type casting or narrowing.
+        This is useful for incompatible data types where automatic conversion cannot be done.Here, target-type specifies the desired type to convert the specified value to
+    </string>
+    <string name="tutorial02_myclasstwo">public class MyClassTwo{\n
+        public static void main(String[] args) {\n\n
+        \tdouble myDouble = 9.78;\n
+        \tint myInt = (int) myDouble;\n
+        //Manual casting: double to int\n
+        \tSystem.out.println(myDouble);// Outputs 9.78\n
+        \tSystem.out.println(myInt);// Outputs 9
+        \n\n\t\t\t}
+        \n\t}
+    </string>
+
+    //Tutorial 02c
+    <string name="tutorial02_title5">Variable Syntax</string>
+    <string name="tutorial02_Content09">There are some rules to declare a variable.\n\n
+        1. Variables are case sensitive.\n
+        2. All identifiers should start with a letter,\n\t\teither uppercase or lowercase letter.\n
+        3. Some Java keyword cannot be used as identifier.\n
+        4. Characters  are only allowed after any combination\n\t\tof the first character\n
+        5. Currency character or an underscore are allowed to create.
+    </string>
+    <string name="tutorial02_Content10">Java Keyword Reference:</string>
+
+
+
+
+    //Tutoiral 03
+    <string name="tutorial03_title">Operators(I)</string>
+    <string name="tutorial03_Content01">There are differents types of operators in Java for perform different operation.
+        It can divide into several groups:\n\n
+        1. Arithmetic operators\n
+        2. Assignament operators\n
+        3. Comparison Operators\n
+        4. Logical operators
+    </string>
+    <string name="tutorial03_Content02">In this chapter, it will aminly focus on (1) and (2) first.</string>
+    <string name="tutorial03_Content03">Arithmetic operators: are used in perform mathematical operations</string>
+    <string name="tutorial03_Content04">Assignment operators: This operators are used for assign the values in the variable</string>
+
+
+
+    //Tutorial 04
+    <string name="tutorial04_title">String and String Function</string>
+    <string name="tutorial04_Content01">String is a sequence of characters and it treated as object.</string>
+    <string name="tutorial04_Content02">class MyFirstJava {\n
+        //This program will print a sentence as output\n
+        public static void main(String args[]) {\n\n
+        String message = &quot;Hello World&quot;;\n
+        System.out.println(message);\n
+        //Prints Hello world from variable message
+        \n\n\t\t}\n\t}
+    </string>
+    <string name="tutorial04_Content03">However, String have its method, it is helpful for adopting to a different operation.Some of the methods are shows in following:\n\n
+        1. Quotes in String\n
+        2. String Length\n
+        3. Uppercase and Lowercase String\n
+        4. String Concatenation\n
+        5. Finding String \n
+        6. Sub String\n
+        7. Replace String
+    </string>
+    <string name="tutorial04_title2">\t1. Quotes in String</string>
+    <string name="tutorial04_Content04">When store a sentence in a string, quotes are needed, so how to quote in a sentence?</string>
+    <string name="tutorial04_Content05">String normalString = &quot;hello i type a sentence&quot;;\nString aStringWithQuotes = &quot;this is a 'quote' in a string&quot;;
+    </string>
+    <string name="tutorial04_title3">\t2. String Length</string>
+    <string name="tutorial04_Content06">One of the string method is to count the number of characters in the string,
+        it can be use the length() method to perform this operation.\n</string>
+    <string name="tutorial04_Content07">String normalString = &quot;hello&quot;;\n
+        System.out.println(&quot;The length if this string is&quot; + normalString.length() );\n
+        //The output length will be 5
+    </string>
+    <string name="tutorial04_title4">\t3. Uppercase and Lowercase String</string>
+    <string name="tutorial04_Content08">Uppercase and lowercase method can let you change the string to uppercase or lowercase easily.\n
+        String message = &quot;Hello World&quot;;\n
+        System.out.println( message.toUpperCase() );\n
+        //Outputs &quot;HELLO WORLD&quot;\n
+        System.out.println( message.toLowerCase() );\n
+        //Outputs &quot;hello world&quot;
+    </string>
+    <string name="tutorial04_title5">\t4. String Concatenation</string>
+    <string name="tutorial04_Content09">Like a value, String also can be concatenate with a plus &quot;+&quot; operator.Anew string will be created.\n
+        String message1 = &quot;Java&quot;;\n
+        String message2 = &quot;World&quot;;\n
+        System.out.println( message1 + &quot; &quot; + message2);\n
+        //Output a new String &quot;Java World&quot;
+    </string>
+    <string name="tutorial04_title6">\t5. Finding String</string>
+    <string name="tutorial04_Content10">If you want to find the text location, you can use the indexOf() function to find the occurence string.A position number will shown after calling this function. However, it can also find the string from  the specified index.\n
+        int indexOf(String str)\n
+        String message = &quot;Java is a programming language&quot;;\n
+        System.out.println( message.indexOf(&quot;language&quot;));//Outputs 19\n\n
+        int indexOf(String str, int fromIndex)\n
+        //fromIndex: the index to start the search form\n
+        String message1 = &quot;Java is a programming language&quot;;\n
+        String  message2 = &quot;FYP topic is teach java&quot;\n
+        System.out.println( message1.indexOf(message2 , 15));\n
+        //Outputs -1, as it does not occur
+    </string>
+    <string name="tutorial04_title7">\t6. Substring</string>
+    <string name="tutorial04_Content11">Substring is a method that select a substring to ba a new string.
+        It can be used by passing a start index or both start index and end index.
+        Please note that -1 can be represent the last character of  the end index.\n
+        substring( int Startindex)\n
+        String message = &quot;Java is a programming language&quot;;\n
+        System.out.println( message.substring( 11 )); //Outputs &quot;gramming language&quot;\n
+        substring(int Startindex, int Endindex)\n
+        String message = &quot;Java is a programming language&quot;;\nSystem.out.println( message.substring( 19,-1 ));//Outputs &quot;language&quot;
+    </string>
+
+    <string name="tutorial04_title8">\t7. Replace String</string>
+    <string name="tutorial04_Content12">This method replace a new string from a old string.\nString str = &quot;Java is a programming language&quot;;\nSystem.out.println(str.replace(‘v’,’k’) );//Outputs &quot;Jaka is a programming language&quot;\nSystem.out.println(str.replace(‘p’,’P’) );//Outputs &quot;Java is a Programming language&quot;
+    </string>
+
+    <string name="tutorial04_title9">\t8. Split String</string>
+    <string name="tutorial04_title10">\t9. Equal String</string>
+
+
+
+
+    //tutorial05
+    <string name="tutorial05_title">Operators(II)</string>
+    <string name="tutorial05_Content01">This chapter is the extension of chapter 5.
+    This chapter will mainly focus on Java Comparison Operators and Logical Operators.\n\nComparison Operators: This operators is mainly for compare purpose on two values.
+    </string>
+    <string name="tutorial05_Content02">Logical Operators: Logical Operators checks that the argument is True or False</string>
+
+    //tutorial06
+    <string name="tutorial06_title">Condition statement(I): if..else statement</string>
 
 
     <!-- Strings related to Settings -->
@@ -157,8 +375,6 @@
     <string name="title_Latest">Latest</string>
     <string name="title_Trending">Trending</string>
     <string name="title_My_Post">My Post</string>
-    <string name="title_activity_user_login">Sign in</string>
-    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -170,5 +386,4 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
 </resources>
