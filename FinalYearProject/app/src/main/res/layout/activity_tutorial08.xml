@@ -13,47 +13,35 @@
         tools:context=".Tutorial01">
 
         <TextView
-            android:id="@+id/tutor07_title"
+            android:id="@+id/tutor08_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="serif-monospace"
-            android:text="@string/tutorial07_title"
+            android:text="@string/tutorial08_title"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tutor07_Content01"
+            android:id="@+id/tutor08_Content01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial07_Content01"
+            android:text="@string/tutorial08_Content01"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tutor07_Content02"
+            android:id="@+id/tutor08_Content02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial07_Content02"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tutor07_Content03a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alike"
-            android:padding="10dp"
-            android:text="@string/tutorial07_Content03a"
+            android:text="@string/tutorial08_Content02"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
@@ -61,37 +49,62 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tutor07_Content03"
+            android:id="@+id/tutor08_Content03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial07_Content03"
+            android:text="@string/tutorial08_Content03"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tutor07_Content03b"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alike"
-            android:padding="10dp"
-            android:text="@string/tutorial07_Content03b"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
 
         <EditText
-            android:id="@+id/tutor07_Content04"
+            android:id="@+id/tutor08_Content04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/alike"
             android:padding="10dp"
-            android:text="@string/tutorial07_Content04"
+            android:text="@string/tutorial08_Content04"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="#222222"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tutor08_Content05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial08_Content05"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tutor08_Content06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial08_Content06"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/tutor08_Content07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial08_Content07"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
