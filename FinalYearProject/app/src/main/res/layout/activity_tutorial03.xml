@@ -60,7 +60,7 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/arith_op"
@@ -80,7 +80,7 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/assi_op"

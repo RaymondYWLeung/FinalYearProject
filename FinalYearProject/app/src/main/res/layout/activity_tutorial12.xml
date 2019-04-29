@@ -23,7 +23,7 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/tutor12_Content01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,9 +32,96 @@
             android:text="@string/tutorial12_Content01"
             android:textAlignment="textStart"
             android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/tutor12_Content02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial12_Content02"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:background="#222222"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tutor12_public"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="public"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tutor12_Content03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial12_Content03"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tutor12_static"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="static"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tutor12_Content04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial12_Content04"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tutor12_void"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="void"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tutor12_Content05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:padding="10dp"
+            android:text="@string/tutorial12_Content05"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

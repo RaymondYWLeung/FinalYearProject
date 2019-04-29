@@ -31,36 +31,6 @@
             android:layout_width="match_parent"
             android:text="Examination 3" />
 
-        <Button
-            android:id="@+id/exam_4"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Examination 4" />
-
-        <Button
-            android:id="@+id/exam_5"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Examination 5" />
-
-        <Button
-            android:id="@+id/exam_6"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Examination 6" />
-
-        <Button
-            android:id="@+id/exam_7"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Examination 7" />
-
-        <Button
-            android:id="@+id/exam_8"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Examination 8" />
-
 
     </LinearLayout>
 

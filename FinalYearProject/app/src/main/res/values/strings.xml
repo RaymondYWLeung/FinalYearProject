@@ -14,15 +14,13 @@
         </string>
 
     //Content 2A
-    <string name="tutorial0_content2a"><u>Let\'s look at HelloWorld.java : </u></string>
+    <string name="tutorial0_content2a"><u>Let us look at HelloWorld.java </u></string>
     <string name="tutorial0_hello_world_example">
             \n
             public class HelloWorld {\n\n
                 public static void main(String[] args) {\n\n
                     // Print \u0022Hello, World\u0022 to the terminal window.\n
                     System.out.println(\u0022Hello, World\u0022);\n\n
-                    // Print Hello, World to the terminal window.\n
-                    System.out.println(&quot;Hello, World&quot;);\n\n
                 }\n\n
             }\n\n
         </string>
@@ -33,34 +31,31 @@
         // Print \u0022Testing1234\u0022 as output.\n
         System.out.println(\u0022Hello, World\u0022);\n\n
         // Print statement to the terminal window.\n
-        System.out.println(&quot;Testing 1 2 3 4&quot;);\n\n
+        System.out.println(\u0022Testing 1 2 3 4\u0022);\n\n
         }\n\n
         }\n\n
     </string>
-    <string name="tutorial0_FormattedJava_example">public class FormattedJava{ \n
-    /* This program will print “Testing 1 2 3 4” as output /* \n
-    public static void main(String args[]){ \n
-    int x = 100; \n System.out.printf(\u0022Printing simple integer: x = %d\n\u0022, x);\n
-    // this will print it up to 2 decimal places\n
-    System.out.printf(\u0022Formatted with precison: PI = %.2f\n\u0022, Math.PI);\n
-    float n = 5.2f;// automatically appends zero to the rightmost part of decimal\n
-    System.out.printf(\u0022Formatted to specific width: n = %.4f\n\u0022, n);\n
-     }\n
+    <string name="tutorial0_FormattedJava_example">public class FormattedJava{\n
+        //This program will print \u0022Testing 1 2 3 4\u0022 as output\n
+        public static void main(String args[]){ \n
+        int x = 100; \n System.out.printf(\u0022Printing simple integer&#58; x = %d\n\u0022, x);\n
+        //this will print it up to 2 decimal places\n
+        System.out.printf(\u0022Formatted with precison&#58; PI = %.2f\n\u0022, Math.PI);\n
+        float n = 5.2f;// automatically appends zero to the rightmost part of decimal\n
+        System.out.printf(\u0022Formatted to specific width&#58; n = %.4f\n\u0022, n);\n}\n
     </string>
 
     //Content 2B
-    <string name="tutorial0_content2b"><u>The output result should be : </u></string>
+    <string name="tutorial0_content2b"><u>The output result should be</u></string>
     <string name="tutorial0_content2b_result">Hello, World</string>
 
     //Content 2C
-    <string name="tutorial0_content2c"><u>Now, try it youtself! : </u></string>
-    <string name="tutorial0_hello_world_temp">\n
-                public class HelloWorld {\n\n
-                    public static void main(String[] args) {\n\n
-                        // Prints &quot;Hello, World&quot; to the terminal window.\n
-                        System.out.println(______________________);\n\n
-                    }\n\n
-                }\n\n
+    <string name="tutorial0_content2c"><u>Now, try it yourself! : </u></string>
+    <string name="tutorial0_hello_world_temp">\npublic class HelloWorld {\n\n
+        public static void main(String[] args) {\n\n
+        //Prints \u0022Hello, World\u0022 to the terminal window.\n
+        System.out.println(______________________);\n\n
+        }\n\n}\n\n
     </string>
     <string name="title_activity_settings">Settings</string>
 
@@ -74,11 +69,11 @@
         platforms  to  targeting different application environments, such as Java EE, Java SE and java card.</string>
     <string name="tutorial01_Principles">Principles</string>
     <string name="tutorial01_Content02">There were 5 goals in the creation of the Java language:\n\n
-    1. It must be &quot;simple, object-oriented, and familiar&quot;. \n
-    2. It must be &quot;robust and secure&quot;. \n
-    3. It must be &quot;architecture-neutral and portable&quot;. \n
-    4. It must execute with &quot;high performance.&quot; \n
-    5. It must be &quot;interpreted, threaded, and dynamic&quot;. \n
+    1. It must be \u0022simple, object-oriented, and familiar\u0022. \n
+    2. It must be \u0022robust and secure\u0022. \n
+    3. It must be \u0022architecture-neutral and portable\u0022. \n
+    4. It must execute with \u0022high performance.\u0022 \n
+    5. It must be \u0022interpreted, threaded, and dynamic\u0022. \n
     </string>
     <string name="tutorial01_Features">Features</string>
     <string name="tutorial01_Content03">Object-oriented: Mostly everything is define by Object,
@@ -88,39 +83,39 @@
 
 
     //Tutorial 02a
-    <string name="tutorial02_title">\n&quot;Print&quot; statement,\nVariable type and Syntax\n</string>
-    <string name="tutorial02_Content01">Print different statement simply on the console\nExample: &quot;Hello World&quot;, &quot;Testing 1 2 3 4&quot;
+    <string name="tutorial02_title">\n\u0022Print\u0022 statement,\nVariable type and Syntax\n</string>
+    <string name="tutorial02_Content01">Print different statement simply on the console\nExample: \u0022Hello World\u0022, \u0022Testing 1 2 3 4\u0022
     </string>
     <string name="tutorial02_Content02">
-     System.out.printf(&quot;sth&quot;);\nwill print multiple arguments between quotes on same line.\n\nSystem.out.println(&quot;sth&quot;); will print what between quotes and move printing cursor to next line.\n\nSystem.out.print (&quot;sth&quot;); will print what is between quotes, leave printing cursor on same line.
+     System.out.printf(\u0022sth\u0022);\nwill print multiple arguments between quotes on same line.\n\nSystem.out.println(\u0022sth\u0022); will print what between quotes and move printing cursor to next line.\n\nSystem.out.print (\u0022sth\u0022); will print what is between quotes, leave printing cursor on same line.
     </string>
     <string name="tutorial02_Firstjava_example">class MyFirstJava{\n\n
-    //This program will print Hello World as output\n
-    public static void main(String args[]){ \n
-        System.out.println(&quot;Hello World!&quot;);\n
+        //This program will print Hello World as output\n
+        public static void main(String args[]){ \n
+        System.out.println(\u0022Hello World!\u0022);\n
         //Prints Hello world on console
         \n\n\t\t}
         \n\t}
     </string>
-    <string name="tutorial02_Content03">Please ignore the class and the main function first.&quot;System&quot; class and &quot;out&quot; stream are used to access println method.&quot;println&quot; means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
+    <string name="tutorial02_Content03">Please ignore the class and the main function first.\u0022System\u0022 class and \u0022out\u0022 stream are used to access println method.\u0022println\u0022 means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
     </string>
     <string name="tutorial02_Testing_example">
         \npublic class TestingJava {\n\n
         /* This program will print “Testing 1 2 3 4” as output /* \n
         public static void main(String[] args) {\n
-        System.out.println(&quot;Testing 1 2 3 4&quot;);\n
+        System.out.println(\u0022Testing 1 2 3 4\u0022);\n
         //Prints on console and move to next line
         \n\n\t\t}
         \n\t}
     </string>
     <string name="tutorial02_empty_space">So let us see the formatted java example</string>
     <string name="tutorial02_FormattedJava_example">public class FormattedJava{\n\n
-        /* This program will print formatted value as output*/\n
+        //This program will print formatted value as output\n
         public static void main(String args[]){\n
         \t\tint x = 100;\n
-        \tSystem.out.printf(\u0022 Integer: x = %d\u0022,x);\n\n
+        \tSystem.out.printf(\u0022 Integer&#58; x = %d\u0022,x);\n\n
         //This will print it up to 2 decimal places\n
-        \tSystem.out.printf(\u0022Format with precison:PI = %.2f\u0022,Math.PI);\n
+        \tSystem.out.printf(\u0022Format with precison&#58;PI = %.2f\u0022,Math.PI);\n
         \n\t\tfloat n = 5.2f;\n
         //auto appends zero to rightmost part of decimal\n
         \tSystem.out.printf(\u0022Format specific width:n = %.4f\u0022,n);
@@ -199,13 +194,11 @@
     //Tutorial 04
     <string name="tutorial04_title">\nString and String Function\n</string>
     <string name="tutorial04_Content01">String is a sequence of characters and it treated as object.</string>
-    <string name="tutorial04_Content02">class MyFirstJava {\n
-        //This program will print a sentence as output\n
+    <string name="tutorial04_Content02">class MyFirstJava{\n//This program will print a sentence as output\n
         public static void main(String args[]) {\n\n
-        String message = &quot;Hello World&quot;;\n
+        String message = \u0022Hello World\u0022;\n
         System.out.println(message);\n
-        //Prints Hello world from variable message
-        \n\n\t\t}\n\t}
+        //Prints Hello world from variable message\n\n\t\t}\n\t}
     </string>
     <string name="tutorial04_Content03">However, String have its method, it is helpful for adopting to a different operation.Some of the methods are shows in following:\n\n
         1. Quotes in String\n
@@ -218,42 +211,42 @@
     </string>
     <string name="tutorial04_title2">\t1. Quotes in String</string>
     <string name="tutorial04_Content04">When store a sentence in a string, quotes are needed, so how to quote in a sentence?</string>
-    <string name="tutorial04_Content05">String normalString = &quot;hello i type a sentence&quot;;\nString aStringWithQuotes = &quot;this is a 'quote' in a string&quot;;
+    <string name="tutorial04_Content05">String normalString = \u0022hello i type a sentence\u0022;\nString aStringWithQuotes = \u0022this is a \'quote\'; in a string\u0022;
     </string>
     <string name="tutorial04_title3">\t2. String Length</string>
     <string name="tutorial04_Content06">One of the string method is to count the number of characters in the string,
         it can be use the length() method to perform this operation.\n</string>
-    <string name="tutorial04_Content07">String normalString = &quot;hello&quot;;\n
-        System.out.println(&quot;The length if this string is&quot; + normalString.length() );\n
+    <string name="tutorial04_Content07">String normalString = \u0022hello\u0022;\n
+        System.out.println(\u0022The length if this string is\u0022 + normalString.length() );\n
         //The output length will be 5
     </string>
     <string name="tutorial04_title4">\t3. Uppercase and Lowercase String</string>
     <string name="tutorial04_Content08">Uppercase and lowercase method can let you change the string to uppercase or lowercase easily.
     </string>
-    <string name="tutorial04_Content08a">String message = &quot;Hello World&quot;;\n
+    <string name="tutorial04_Content08a">String message = \u0022Hello World\u0022;\n
         System.out.println( message.toUpperCase() );\n
-        //Outputs &quot;HELLO WORLD&quot;\n
+        //Outputs \u0022HELLO WORLD\u0022\n
         System.out.println( message.toLowerCase() );\n
-        //Outputs &quot;hello world&quot;
+        //Outputs \u0022hello world\u0022
     </string>
     <string name="tutorial04_title5">\t4. String Concatenation</string>
-    <string name="tutorial04_Content09">Like a value, String also can be concatenate with a plus &quot;+&quot; operator.Anew string will be created.
+    <string name="tutorial04_Content09">Like a value, String also can be concatenate with a plus \u0022+\u0022 operator.Anew string will be created.
     </string>
-    <string name="tutorial04_Content09a">String message1 = &quot;Java&quot;;\nString message2 = &quot;World&quot;;\nSystem.out.println( message1 + &quot; &quot; + message2);\n
-        //Output a new String &quot;Java World&quot;
+    <string name="tutorial04_Content09a">String message1 = \u0022Java\u0022;\nString message2 = \u0022World\u0022;\nSystem.out.println( message1 + \u0022 \u0022 + message2);\n
+        //Output a new String \u0022Java World\u0022
     </string>
     <string name="tutorial04_title6">\t5. Finding String</string>
     <string name="tutorial04_Content10">If you want to find the text location, you can use the indexOf() function to find the occurence string.
         A position number will shown after calling this function. However, it can also find the string from  the specified index.\n
     </string>
     <string name="tutorial04_Content10a">int indexOf(String str)\n
-        String message = &quot;Java is a programming language&quot;;\n
-        System.out.println( message.indexOf(&quot;language&quot;));\n
+        String message = \u0022Java is a programming language\u0022;\n
+        System.out.println( message.indexOf(\u0022language\u0022));\n
         //Outputs 19\n\n
         int indexOf(String str, int fromIndex)\n
         //fromIndex: the index to start the search form\n
-        String message1 = &quot;Java is a programming language&quot;;\n
-        String  message2 = &quot;FYP topic is teach java&quot;\n
+        String message1 = \u0022Java is a programming language\u0022;\n
+        String  message2 = \u0022FYP topic is teach java\u0022\n
         System.out.println( message1.indexOf(message2 , 15));\n
         //Outputs -1, as it does not occur
     </string>
@@ -263,26 +256,26 @@
         Please note that -1 can be represent the last character of  the end index.\n
     </string>
     <string name="tutorial04_Content11a">substring( int Startindex)\n
-        String message = &quot;Java is a programming language&quot;;\n
-        System.out.println( message.substring( 11 ));\n//Outputs &quot;gramming language&quot;\nsubstring(int Startindex, int Endindex)\nString message = &quot;Java is a programming language&quot;;\nSystem.out.println( message.substring( 19,-1 ));
-        \n//Outputs &quot;language&quot;
+        String message = \u0022Java is a programming language\u0022;\n
+        System.out.println( message.substring( 11 ));\n//Outputs \u0022gramming language\u0022\nsubstring(int Startindex, int Endindex)\nString message = \u0022Java is a programming language\u0022;\nSystem.out.println( message.substring( 19,-1 ));
+        \n//Outputs \u0022language\u0022
     </string>
 
     <string name="tutorial04_title8">\t7. Replace String</string>
     <string name="tutorial04_Content12">This method replace a new string from a old string.
     </string>
-    <string name="tutorial04_Content12a">String str = &quot;Java is a programming language&quot;;\n
-        System.out.println(str.replace(‘v’,’k’) );\n
-        //Outputs &quot;Jaka is a programming language&quot;\n
-        System.out.println(str.replace(‘p’,’P’) );\n
-        //Outputs &quot;Java is a Programming language&quot;
+    <string name="tutorial04_Content12a">String str = \u0022Java is a programming language\u0022;\n
+        System.out.println(str.replace(\'v\',\'k\') );\n
+        //Outputs \u0022Jaka is a programming language\u0022\n
+        System.out.println(str.replace(\'p\',\'P\') );\n
+        //Outputs \u0022Java is a Programming language\u0022
     </string>
 
     <string name="tutorial04_title9">\t8. Split String</string>
     <string name="tutorial04_Content13">The string split() method breaks a given string around matches of the given regular expression.</string>
     <string name="tutorial04_Content13a">// Java program to demonstrate working of split(regex,limit) with high limit.\npublic class GFG {\n
         public static void main(String args[]) {\n
-		\tString str = &quot;javas@for@javas&quot;;\n\tString[] arrOfStr = str.split(&quot;@&quot;, 5);\n\nfor (String a : arrOfStr)\n
+		\tString str = \u0022javas@for@javas\u0022;\n\tString[] arrOfStr = str.split(\u0022@\u0022, 5);\n\nfor (String a : arrOfStr)\n
 			\tSystem.out.println(a);\n}\n}
     </string>
     <string name="tutorial04_Content13b">Output:\njavas\nfor\njavas</string>
@@ -291,94 +284,127 @@
     <string name="tutorial04_Content14a">// Java program to Compare two strings\n// lexicographically\n
         public class GFG {\n
         \tpublic static void main(String args[]) {\n
-        \t\tString string1 = new String(&quot;javasforjavas&quot;);\n
-        \t\tString string2 = new String(&quot;Practice&quot;);\n
-        \t\tString string3 = new String(&quot;Javas&quot;);\n
-        \t\tString string4 = new String(&quot;Javas&quot;);\n
-        \t\tString string5 = new String(&quot;javas&quot;);\n\n
+        \t\tString string1 = new String(\u0022javasforjavas\u0022);\n
+        \t\tString string2 = new String(\u0022Practice\u0022);\n
+        \t\tString string3 = new String(\u0022Javas\u0022);\n
+        \t\tString string4 = new String(\u0022Javas\u0022);\n
+        \t\tString string5 = new String(\u0022javas\u0022);\n\n
         // Comparing for String 1 != String 2\n
-		\tSystem.out.println(&quot;Comparing&quot; + string1 + &quot; and &quot; + string2
-						+ &quot; : &quot; + string1.equals(string2));\n
+		\tSystem.out.println(\u0022Comparing\u0022 + string1 + \u0022 and \u0022 + string2
+						+ \u0022 : \u0022 + string1.equals(string2));\n
 
 		// Comparing for String 3 = String 4\n
-		\tSystem.out.println(&quot;Comparing &quot; + string3 + &quot; and &quot; + string4
-						+ &quot; : &quot; + string3.equals(string4));\n
+		\tSystem.out.println(\u0022Comparing \u0022 + string3 + \u0022 and \u0022 + string4
+						+ \u0022 : \u0022 + string3.equals(string4));\n
 
 		// Comparing for String 4 != String 5\n
-		System.out.println(&quot;Comparing &quot; + string4 + &quot; and &quot;v + string5
-						+ &quot; : &quot; + string4.equals(string5));\n
+		System.out.println(\u0022Comparing \u0022 + string4 + \u0022 and \u0022v + string5
+						+ \u0022 : \u0022 + string4.equals(string5));\n
 
 		// Comparing for String 1 != String 4\n
-		System.out.println(&quot;Comparing &quot; + string1 + &quot; and &quot; + string4
-						+ &quot; : &quot; + string1.equals(string4));\t\n}\n}
+		System.out.println(\u0022Comparing \u0022 + string1 + \u0022 and \u0022 + string4
+						+ \u0022 : \u0022 + string1.equals(string4));\t\n}\n}
 </string>
     <string name="tutorial04_Content14b">Output:\nComparing javasforjavas and Practice : false\nComparing javasforjavas and javasforjavas : true\nComparing Javasforjavas and javasforjavas : false</string>
 
 
     //tutorial05
-    <string name="tutorial05_title">\nOperators(II)\n</string>
+    <string name="tutorial05_title">\nOperators&#40;II&#41;\n</string>
     <string name="tutorial05_Content01">This chapter is the extension of chapter 5.
     This chapter will mainly focus on Java Comparison Operators and Logical Operators.\n\nComparison Operators: This operators is mainly for compare purpose on two values.
     </string>
     <string name="tutorial05_Content02">Logical Operators: Logical Operators checks that the argument is True or False</string>
 
     //tutorial06
-    <string name="tutorial06_title">\nCondition statement(I): if..else statement\n</string>
+    <string name="tutorial06_title">\nCondition statement&#40;I&#41; if..else statement\n</string>
     <string name="tutorial06_Content01">If statement</string>
     <string name="tutorial06_Content02">This statement requires conditional statement, if the condition is true, operation will be performed inside the statement block.</string>
     <string name="tutorial06_Content03">int a = 20;\nint b =10;\nif(a > b){\n
-        System.out.println(&quot;it is greater than 10&quot;);\t\n}
+        System.out.println(\u0022it is greater than 10\u0022);\t\n}
 </string>
     <string name="tutorial06_Content04">Else if / Nested if statement</string>
     <string name="tutorial06_Content05">This statement is used to specify a new condition while the if statement block is false. If it met the condition in the if..else statement, operation perform in the statement block. </string>
     <string name="tutorial06_Content06">int number = 16;\nif(number > 20){\n
-        \t\tSystem.out.println(&quot;it is greater than 20&quot;);\n}\nelseif(number > 15){\n
-        \t\tSystem.out.println(&quot;it is greater than 15&quot;);\n}
+        \t\tSystem.out.println(\u0022it is greater than 20\u0022);\n}\nelseif(number > 15){\n
+        \t\tSystem.out.println(\u0022it is greater than 15\u0022);\n}
 </string>
     <string name="tutorial06_Content07">Else statement</string>
     <string name="tutorial06_Content08">This statement is handle the false condition while all condition is false.</string>
     <string name="tutorial06_Content09">int number = 16;\nif(number > 20){\n
-        \t\tSystem.out.println(&quot;it is greater than 20&quot;);\n}\n
+        \t\tSystem.out.println(\u0022it is greater than 20\u0022);\n}\n
         elseif(number > 15){\n
-        \t\tSystem.out.println(&quot;it is greater than 15&quot;);\n
+        \t\tSystem.out.println(\u0022it is greater than 15\u0022);\n
         }\n
         else{\n\t
-        System.out.println(&quot;it is less than or equal to 15&quot;);\n}
+        System.out.println(\u0022it is less than or equal to 15\u0022);\n}
 </string>
     <string name="tutorial06_Content10">Empty</string>
 
 
     //tutorial07
-    <string name="tutorial07_title">\nCondition statement(II) : Switch Statement\n</string>
-    <string name="tutorial07_Content01">Switch statement is the advance version for if else statement. It accept multiple case, which allows multiple execution paths.</string>
-    <string name="tutorial07_Content02">Case value: Each value of expression will pass into the case and compare.\n\nBreak keyword: Break out of the switch block when break keyword is used.\n\nDefault keyword: if the value of expression is not suitable for all case,it will switch to default case.</string>
-    <string name="tutorial07_Content03">1. Switch statement can only use once\n2. Only accept integers, string and enums\n3. Case Value must be same type in switch statement\n4. Default are optional\n5. Break are optional, not all case need break\nbut it requires at least a break.
+    <string name="tutorial07_title">\nCondition statement&#40;II&#41;Switch Statement\n</string>
+    <string name="tutorial07_Content01">Switch statement is the advance version for if else statement.
+        It accept multiple case, which allows multiple execution paths.</string>
+    <string name="tutorial07_Content02">Case value\nEach value of expression will pass into the case and compare.\n\nBreak keyword\nBreak out of the switch block when break keyword is used.\n\nDefault keyword\nIf the value of expression is not suitable for all case,it will switch to default case.</string>
+    <string name="tutorial07_Content03">1. Switch statement can only use once\n
+        2. Only accept integers, string and enums\n
+        3. Case Value must be same type in switch statement\n
+        4. Default are optional\n
+        5. Break are optional,not all case need break\nbut it requires at least a break.
     </string>
-    <string name="tutorial07_Content04">
-        \tclass MyJavaProgramming{\n
-        \t\tpublic static void main(String args[]){\n
-        \t\tchar grade =&#39;D&#39;\n
-        \t\tswitch(grade){\n
-        \t\t\tcase&#39;A&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade A&quot;);\n\t\t\t\tbreak;\n
-        \t\t\tcase &#39;B&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade B&quot;);\n\t\t\t\tbreak;\n
-        \t\t\tcase &#39;C&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade C&quot;);\n\t\t\t\tbreak;\n
-        \t\t\tcase&#39;D&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade D&quot;);\n\t\t\t\tbreak;\n
-        \t\t\tcase&#39;E&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade E&quot;);\n\t\t\t\tbreak;\n
-        \t\tdefault:\n
-        \t\t\tSystem.out.println(&quot;Invalid Grade&quot;);\n
-        \t\t}\n
-        \t\t\tSystem.out.println(&quot;Your Grade&quot;);\n\t}
-</string>
-    <string name="tutorial07_Content03b">Example:</string>
-    <string name="tutorial07_Content03a">Rule of using Switch case:</string>
+    <string name="tutorial07_Content04">class MyJavaProgramming{\npublic static void main(String args[]){\n
+        char grade =\'D\'\n
+        switch(grade){\n
+        case\'A\':\n
+        System.out.print(\u0022Grade A\u0022);\n
+        break;\n
+        case \'B\':\n
+        System.out.println(\u0022Grade B\u0022);\n
+        break;\n
+        case \'C\':\n
+        System.out.println(\u0022Grade C\u0022);\n
+        break;\n
+        case\'D\':\n
+        System.out.println(\u0022Grade D\u0022);\n
+        break;\n
+        case\'E\':\n
+        System.out.println(\u0022Grade E\u0022);\n
+        break;\n
+        default:\n
+        System.out.println(\u0022Invalid Grade\u0022);\n}\n
+        System.out.println(\u0022Your Grade\u0022);\n}
+        </string>
+    <!--<string name="tutorial07_Content04">class MyJavaProgramming{\npublic static void main(String args[]){\n
+        char grade =&#39;D&#39;\n
+        switch&#40;grade&#41;{\n
+        case&#39;A&#39;&#58;\n
+        System.out.print(\u0022Grade A\u0022);\n
+        break;\n
+        case &#39;B&#39;&#58;\n
+        System.out.println(\u0022Grade B\u0022);\n
+        break;\n
+        case &#39;C&#39;&#58;\n
+        System.out.println(\u0022Grade C\u0022);\n
+        break;\n
+        case&#39;D&#39;&#58;\n
+        System.out.println(\u0022Grade D\u0022);\n
+        break;\n
+        case&#39;E&#39;&#58;\n
+        System.out.println(\u0022Grade E\u0022);\n
+        break;\n
+        default&#58;\n
+        System.out.println(\u0022Invalid Grade\u0022);\n}\n
+        System.out.println(\u0022Your Grade\u0022);\n}</string>-->
+    <string name="tutorial07_Content03b">Example</string>
+    <string name="tutorial07_Content03a">Rule of using Switch case</string>
 
 
     //tutorial08
-    <string name="tutorial08_title">\nLoop Control (I) While, Do&#46;&#46;&#46;While Loop\n</string>
+    <string name="tutorial08_title">\nLoop Control &#40;I&#41;\n While Do&#46;&#46;&#46;While Loop\n</string>
     <string name="tutorial08_Content01">This enable a part of code to be executed until a set of condition is meet.Moreover, it can separate into several loops:\n
-        \t1.While Loop\n
-        \t2.Do&#46;&#46;&#46;While Loop\n
-        \t3.for Loop\nIn this chapter, it will mainly focus on (1) and (3)
+        \n1.While Loop\n
+        2.Do&#46;&#46;&#46;While Loop\n
+        3.for Loop\n\nIn this chapter, it will mainly focus on (1) and (3).
 </string>
     <string name="tutorial08_Content02">While Loops</string>
     <string name="tutorial08_Content03">It repeats statement when condition is true.</string>
@@ -390,25 +416,25 @@
     <string name="tutorial08_Content06">It will execute the codes at least once whether the condition is True or False. It repeats a statement while it is true.</string>
     <string name="tutorial08_Content07">int x = 10;\n
         \tdo {\n
-        \t\tSystem.out.print(&quot;value of x:&quot;+ x);\n
+        \t\tSystem.out.print(\u0022value of x\u0022+ x);\n
         \t\tx++;\n
-        \t\tSystem.out.print(&quot;&#47;n&quot;);\n
+        \t\tSystem.out.print(\u0022&#47;n\u0022);\n
         \t}\n
         while( x&lt;20 );</string>
 
 
     //tutorial09
-    <string name="tutorial09_title">\nLoop Control (II)\nFor Loop and For-Each Loop\n</string>
+    <string name="tutorial09_title">\nLoop Control &#40;II&#41;\nFor Loop and For-Each Loop\n</string>
     <string name="tutorial09_Content01">For Loop </string>
     <string name="tutorial09_Content02">It loop a statement  of code for several times. Inside the &#40;&#41;,
-        it defines the variable, set the conditions for the code block and count each times.\n\nFormat&#58; for&#40; Initialization &#59; Condition &#59; Increment&#41;\n
+        it defines the variable, set the conditions for the code block and count each times.\n\nFormat&#58;\nfor&#40; Initialization &#59; Condition &#59; Increment;&#41;\n
 </string>
-    <string name="tutorial09_Content03">for (int i = 0; i &gt; 5; i++) {\n
+    <string name="tutorial09_Content03">for(int i = 0; i &gt;5; i++){\n
         \tSystem.out.println(i);\n}
 </string>
     <string name="tutorial09_Content04">For Each Loop</string>
     <string name="tutorial09_Content05">In for loop, it can also loop an array through for-each Loop.</string>
-    <string name="tutorial09_Content06">String[] cars = {&quot;Ada&quot;, &quot;Billy&quot;, &quot;Carmen&quot;, &quot;Milly&quot;};\n
+    <string name="tutorial09_Content06">String[] cars = {\u0022Ada\u0022, \u0022Billy\u0022, \u0022Carmen\u0022, \u0022Milly\u0022};\n
         \t\tfor (String x&#58;name) {\n
         \t\t\tSystem.out.println(x);\n}
 </string>
@@ -417,19 +443,19 @@
 
     //tutorial10
     <string name="tutorial10_title">\nLoop Control (III)\n Nested loop and Loop control Statement\n</string>
-    <string name="tutorial10_Content01">Nested Loop: A loop exists inside the body with another loop is called nesting.</string>
+    <string name="tutorial10_Content01">Nested Loop. A loop exists inside the body with another loop is called nesting.</string>
     <string name="tutorial10_Content02">for (int i = 1; i &lt;= 5; i++) {\n
-        \tSystem.out.println(&quot;Outer loop iteration&quot; + i);\n
+        \tSystem.out.println(\u0022Outer loop iteration\u0022 + i);\n
         \tfor (int j = 1; j &lt;&#61; i; j++) {\n
-        \tSystem.out.println(&quot;i = &quot; + i + &quot;; j = &quot; + j);\n
+        \tSystem.out.println(\u0022i = \u0022 + i + \u0022, j = \u0022 + j);\n
   	\t}\n}
 </string>
     <string name="tutorial10_Content03">Loop control Statement：</string>
-    <string name="tutorial10_Content04">&quot;break&quot; statement: it terminates in the loop or switch statement</string>
-    <string name="tutorial10_Content05">for(int x : numbers ) {\n
+    <string name="tutorial10_Content04">\u0022break\u0022 statement: it terminates in the loop or switch statement</string>
+    <string name="tutorial10_Content05">for(int x&#58; numbers ) {\n
         if( x == 30 ) {\n\tbreak;\n}</string>
-    <string name="tutorial10_Content06">&quot;continue&quot; statement: retest the condition of the loop</string>
-    <string name="tutorial10_Content07">for(int x : numbers ) {\n
+    <string name="tutorial10_Content06">\u0022continue\u0022 statement&#58; retest the condition of the loop</string>
+    <string name="tutorial10_Content07">for(int x &#58; numbers ) {\n
         if( x == 30 ) {\n\tcontinue;\n}</string>
 
 
@@ -441,15 +467,15 @@
     <string name="tutorial11_Content03">Inside the element, it will have the index number to represent the element.
         Please note that all index must be start with 0, it also represent the first element
 </string>
-    <string name="tutorial11_Content04">For Example: intList[0] = 1 // first element\nintList[1] = 2 // second element\nintList[4] = 5
+    <string name="tutorial11_Content04">For Example&#58; intList[0] = 1 // first element\nintList[1] = 2 // second element\nintList[4] = 5
 </string>
     <string name="tutorial11_Content05">Change element</string>
     <string name="tutorial11_Content06">When replacing the element, add an new value into the element respectively.</string>
-    <string name="tutorial11_Content07">For Example: intList[0] = 0  // first element\nSo the updated intList array will be &#123;0,2,3,4,5&#125;;
+    <string name="tutorial11_Content07">For Example&#58; intList[0] = 0  // first element\nSo the updated intList array will be &#123;0,2,3,4,5&#125;;
 </string>
     <string name="tutorial11_Content08">Array Element Processing</string>
     <string name="tutorial11_Content09">Array Length</string>
-    <string name="tutorial11_Content10">Use &quot;length&quot; property to count the number of elements in the array.</string>
+    <string name="tutorial11_Content10">Use \u0022length\u0022 property to count the number of elements in the array.</string>
     <string name="tutorial11_Content11">String[] intList = {0,2,3,4,5};\n
         System.out.println(intList.length);// Outputs 5</string>
     <string name="tutorial11_Content12">Array Looping</string>
@@ -457,52 +483,60 @@
         It can represent in normal for loop or for-Each loop.
 </string>
     <string name="tutorial11_Content14">For loop</string>
-    <string name="tutorial11_Content15">String[] cars = {&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Ford&quot;, &quot;Mazda&quot;};\n
+    <string name="tutorial11_Content15">String[] cars = {\u0022Volvo\u0022, \u0022BMW\u0022, \u0022Ford\u0022, \u0022Mazda\u0022};\n
         for (int i = 0; i &#60; cars.length; i++) {\n
         System.out.println(cars[i]);\n}
 </string>
     <string name="tutorial11_Content16">For each loop</string>
-    <string name="tutorial11_Content17">String[] cars = {&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Ford&quot;, &quot;Mazda&quot;};\n
-        \t\tfor (String i : cars) {\n
+    <string name="tutorial11_Content17">String[] cars = {\u0022Volvo\u0022, \u0022BMW\u0022, \u0022Ford\u0022, \u0022Mazda\u0022};\n
+        \t\tfor (String i &#58; cars) {\n
         System.out.println(i);\n}
 </string>
     <string name="tutorial11_Content18">Empty</string>
 
 
     //tutorial12
-    <string name="tutorial12_title">\nClass main method\n</string>
-    <string name="tutorial12_Content01">public class MyFirstJavaProgram {\n
-        //This is my first java program.\n
-        //This will print &#39;Hello World&#39; as the output\n\n
+    <string name="tutorial12_title">\n Main method\n</string>
+    <string name="tutorial12_Content02">public class MyFirstJavaProgram{\n
         public static void main(String []args) {\n
-        \tSystem.out.println(&quot;Hello World&quot;); // prints Hello World\n}
-}</string>
-    <string name="tutorial12_Content02">empty</string>
-    <string name="tutorial12_Content03">empty</string>
-    <string name="tutorial12_Content04">empty</string>
-    <string name="tutorial12_Content05">empty</string>
+        \tSystem.out.println(\u0022Hello World\u0022);\n}}</string>
+    <string name="tutorial12_Content01">Java main method is the entry point of any java program.
+        Its syntax is always public static void main(String[] args).
+        You can only change the name of String array argument, for example you can change args to myStringArgs.</string>
+    <string name="tutorial12_Content03">This is the access modifier of the main method.
+        It has to be public so that java runtime can execute this method.
+        Remember that if you make any method non-public then it is not allowed to be executed by any program,
+        there are some access restrictions applied. So it means that the main method has to be public.
+        Let us see what happens if we define the main method as non-public.</string>
+    <string name="tutorial12_Content04">When java runtime starts, there is no object of the class present.
+        That why the main method has to be static so that JVM can load the class into memory and call the main method.
+        If the main method won’t be static, JVM would not be able to call it because there is no object of the class
+        is present. Let’s see what happens when we remove static from java main method.</string>
+    <string name="tutorial12_Content05">Java programming mandates that every method provide the return type.
+        Java main method doesn’t return anything, that’s why it’s return type is void.
+        This has been done to keep things simple because once the main method is finished executing,
+        java program terminates. So there is no point in returning anything,
+        there is nothing that can be done for the returned object by JVM.
+        If we try to return something from the main method,it will give compilation error as an unexpected return value.</string>
 
 
     //tutorial13
     <string name="tutorial13_title">\nJava Encapsulation\n</string>
-    <string name="tutorial13_Content01">The meaning of Encapsulation, is to make sure that &quot;sensitive&quot; data is hidden from users.
-        To achieve this, you must:</string>
+    <string name="tutorial13_Content01">The meaning of Encapsulation, is to make sure that \u0022sensitive\u0022 data is hidden from users.
+        To achieve this, you must</string>
     <string name="tutorial13_Content02">1. declare class variables/attributes as private (only accessible within the same class)\n2. provide public setter and getter methods to access and update the value of a private variable</string>
     <string name="tutorial13_Content03">Setter/Getter: In Java, getter and setter are two conventional methods
         that are used for retrieving and updating value of a variable, in order to make manage the accessible of the variables.\n
-        \tGetter: Retrieving value of the variable\n
-        \tSetter: Updating Value of the variable
+        \nGetter: Retrieving value of the variable\nSetter: Updating Value of the variable
     </string>
     <string name="tutorial13_Content04">public class SimpleGetterAndSetter {\n
     \tprivate int number;\n\n\t
         public int getNumber() {\n\t\t
-        return this.number;\n
-    \t}\n\n
+        return this.number;\n\t}\n\n
         \tpublic void setNumber(int num) {\n
-        \t\tthis.number = num;\n
-    \t}\n}
+        \t\tthis.number = num;\n\t}\n}
 </string>
-    <string name="tutorial13_Content05">\nNaming convention:\n</string>
+    <string name="tutorial13_Content05">Naming convention:</string>
     <string name="tutorial13_Content06">The naming scheme of setter and getter should follow Java bean naming conventions follows:
         getXXX() and setXXX(),where XXX is name of the variable.
 </string>
@@ -536,7 +570,7 @@
 	//abstract method\n
 	\tpublic abstract void work();\n
         \tpublic String toString(){\n
-		\t\treturn &quot;Name=&quot;+this.name+&quot;:Gender=&quot;+this.gender;\n
+		\t\treturn \u0022Name=\u0022+this.name+\u0022:Gender=\u0022+this.gender;\n
         \t}\n\n
         \tpublic void changeName(String newName) {\n\t\tthis.name = newName;\t\n}\n}</string>
     <string name="tutorial14_Content06">Inherit Abstract Class</string>
@@ -550,15 +584,15 @@
         \t}\n@Override\n
 	\tpublic void work(){\n
         \t\tif(empId == 0){\n
-        \t\tSystem.out.println(&quot;Not working&quot;);\n}\n
+        \t\tSystem.out.println(\u0022Not working\u0022);\n}\n
         \telse{\n
-        \t\tSystem.out.println(&quot;Working as employee!!&quot;);\n}\n}\n
+        \t\tSystem.out.println(\u0022Working as employee!!\u0022);\n}\n}\n
         \tpublic static void main(String args[]){\n//coding in terms of abstract classes\n
-        Person student = new Employee(&quot;Dove&quot;,&quot;Female&quot;,0);\n
-        Person employee = new Employee(&quot;Pan&quot;,&quot;Male&quot;,123);\n
+        Person student = new Employee(\u0022Dove\u0022,\u0022Female\u0022,0);\n
+        Person employee = new Employee(\u0022Pan\u0022,\u0022Male\u0022,123);\n
         \t\tstudent.work();\n
         \t\temployee.work();\n//using method implemented in abstract class,inheritance\n
-        \t\temployee.changeName(&quot;Pankaj Kumar&quot;);\n
+        \t\temployee.changeName(\u0022Pankaj Kumar\u0022);\n
         \t\tSystem.out.println(employee.toString());\n}\n}\n</string>
     <string name="tutorial14_Content09">Abstract Method</string>
     <string name="tutorial14_Content10">If you want a class to contain a particular method but you want
@@ -570,17 +604,17 @@
         \tprivate int number;\n
         \tpublic abstract double computePay();\n
    		// Remainder of class definition\n}\n</string>
-    <string name="tutorial14_Content12">Declaring a method as abstract has two consequences:\n1. The class containing it must be declared as abstract.\n2. Any class inheriting the current class must either override the abstract method or declare itself as abstract.
+    <string name="tutorial14_Content12">Declaring a method as abstract has two consequences:\n\n1. The class containing it must be declared as abstract.\n2. Any class inheriting the current class must either override the abstract method or declare itself as abstract.\n
 </string>
     <string name="tutorial14_Content13">empty</string>
 
     //tutorial15
     <string name="tutorial15_title">\nInterface\n</string>
-    <string name="tutorial15_Content01">An interface is an abstract &quot;class&quot;
-        that is used to group related methods with &quot;empty&quot; bodies.\n
+    <string name="tutorial15_Content01">An interface is an abstract \u0022class\u0022
+        that is used to group related methods with \u0022empty\u0022 bodies.\n
         It can contains constants,default static and nested types. </string>
     <string name="tutorial15_Content02">Declaring Interfaces</string>
-    <string name="tutorial15_Content03">we can declare interface by using &quot;interface&quot; keyword</string>
+    <string name="tutorial15_Content03">we can declare interface by using \u0022interface\u0022 keyword</string>
     <string name="tutorial15_Content04">interface Animal {\n
   		\tpublic void animalSound();\n
         \t// interface method (does not have a body)\n
@@ -588,15 +622,15 @@
         \t// interface method (does not have a body)\n}
 </string>
     <string name="tutorial15_Content05">Implementing Interface</string>
-    <string name="tutorial15_Content06">we can use &quot;implements&quot; keyword when implement by class.</string>
+    <string name="tutorial15_Content06">we can use \u0022implements\u0022 keyword when implement by class.</string>
     <string name="tutorial15_Content07">class Pig implements Animal {\n
         \tpublic void animalSound() {\n
         \t// The body of animalSound() is provided here\n
-        \t\tSystem.out.println(&quot;The pig says: wee wee&quot;);\n
+        \t\tSystem.out.println(\u0022The pig says: wee wee\u0022);\n
   		\t}\n\n
         \tpublic void sleep() {\n
         \t// The body of sleep() is provided here\n
-        \t\tSystem.out.println(&quot;Zzz&quot;);\n\t}\n}\n\n
+        \t\tSystem.out.println(\u0022Zzz\u0022);\n\t}\n}\n\n
         \tclass MyMainClass {\n
         \tpublic static void main(String[] args) {\n
         \t\tPig myPig = new Pig();\n
@@ -614,14 +648,14 @@
         method name but different parameters.</string>
     <string name="tutorial16_Content02">class Dog{\n
     \tpublic void bark(){\n
-        \t\tSystem.out.println(&quot;woof&quot;);\n
+        \t\tSystem.out.println(\u0022woof\u0022);\n
         \t}\n}\n\n
         \tclass Hound extends Dog{\n
         \t\tpublic void sniff(){\n
-        \t\t\tSystem.out.println(&quot;sniff&quot;);\n
+        \t\t\tSystem.out.println(\u0022sniff\u0022);\n
     \t}\n\n
         \tpublic void bark(){\n
-        \t\tSystem.out.println(&quot;bowl&quot;);\t\n}\n}\n\n
+        \t\tSystem.out.println(\u0022bowl\u0022);\t\n}\n}\n\n
         \tpublic class OverridingTest{\n
         \t\tpublic static void main(String [] args){\n
         \t\t\tDog dog = new Hound();\n
@@ -633,11 +667,11 @@
         implementation of a method that is already provided its parent class</string>
     <string name="tutorial16_Content04">class Dog{\n
     \tpublic void bark(){\n
-        \t\tSystem.out.println(&quot;woof&quot;);\n}\n
+        \t\tSystem.out.println(\u0022woof\u0022);\n}\n
         \t//overloading method\n
         \tpublic void bark(int num){\n
     	\t\tfor(int i=0; i&lt;num; i++)\n
-        \t\t\tSystem.out.println(&quot;woof&quot;);\n}\n
+        \t\t\tSystem.out.println(\u0022woof\u0022);\n}\n
 }</string>
     <string name="tutorial16_Content05">Different between overriding and overloading:</string>
     <string name="tutorial16_Content06">empty</string>
@@ -646,45 +680,44 @@
 
 
     //tutorial17
-    <string name="tutorial17_title">Inheritance and Polymorphism</string>
+    <string name="tutorial17_title">\nInheritance and Polymorphism\n</string>
     <string name="tutorial17_Content01">Inheritance</string>
     <string name="tutorial17_Content02">In Java, it is possible to inherit attributes and methods from one class to another.
-        We group the &quot;inheritance concept&quot; into two categories:</string>
+        We group the \u0022inheritance concept\u0022 into two categories:</string>
     <string name="tutorial17_Content03">subclass (child) - the class that inherits from another class
 superclass (parent) - the class being inherited from
 </string>
     <string name="tutorial17_Content04">To inherit from a class, use the extends keyword.</string>
     <string name="tutorial17_Content05">class Vehicle {\n
-  \tprotected String brand = &quot;Ford&quot;;\n\t// Vehicle attribute\n
+  \tprotected String brand = \u0022Ford\u0022;\n\t// Vehicle attribute\n
   \tpublic void honk() {\n\t// Vehicle method\n
-        \t\tSystem.out.println(&quot;Tuut, tuut!&quot;);\n
-  \t}\n}\n\n
+        \t\tSystem.out.println(\u0022Tuut, tuut!\u0022);\n\t}\n}\n\n
         \tclass Car extends Vehicle {\n
-        \t\tprivate String modelName = &quot;Mustang&quot;;\n
+        \t\tprivate String modelName = \u0022Mustang\u0022;\n
         \t\t// Car attribute\n
         \tpublic static void main(String[] args) {\n
         \t// Create a myCar object\n
         \t\tCar myCar = new Car();\n
         \t// Call the honk() method from Vehicle class\n
         \t\tmyCar.honk();\n
-        \t\tSystem.out.println(myCar.brand +&quot; &quot;+ myCar.modelName);\n\t}\n}\n
+        \t\tSystem.out.println(myCar.brand +\u0022 \u0022+ myCar.modelName);\n\t}\n}\n
 </string>
     <string name="tutorial17_Content06">Polymorphism</string>
-    <string name="tutorial17_Content07">Polymorphism means &quot;many forms&quot;,
+    <string name="tutorial17_Content07">Polymorphism means \u0022many forms\u0022,
         and it occurs when we have many classes that are related to each other by inheritance.
         Like specified in above,Inheritance lets us inherit attributes and methods from another class.
         Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.</string>
     <string name="tutorial17_Content08">class Animal {\n
         \tpublic void animalSound() {\n
-        \t\tSystem.out.println(&quot;The animal makes a sound&quot;);\n
+        \t\tSystem.out.println(\u0022The animal makes a sound\u0022);\n
         \t}\n}\n
         \tclass Pig extends Animal {\n
         \t\tpublic void animalSound() {\n
-        \t\tSystem.out.println(&quot;The pig says: wee wee&quot;);\n
+        \t\tSystem.out.println(\u0022The pig says: wee wee\u0022);\n
         \t}\n}\n
         \tclass Dog extends Animal {\n
         \tpublic void animalSound() {\n
-        \t\tSystem.out.println(&quot;The dog says: bow wow&quot;);\n\t}\n}\n
+        \t\tSystem.out.println(\u0022The dog says: bow wow\u0022);\n\t}\n}\n
 </string>
 
 
@@ -771,7 +804,7 @@ superclass (parent) - the class being inherited from
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">&quot;Contacts permissions are needed for providing email
-        completions.&quot;
+    <string name="permission_rationale">\u0022Contacts permissions are needed for providing email
+        completions.\u0022
     </string>
 </resources>

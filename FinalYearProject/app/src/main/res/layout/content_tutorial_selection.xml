@@ -17,49 +17,94 @@
             android:id="@+id/tutorial_1"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 1" />
+            android:text="Introduction of Java"/>
 
         <Button
             android:id="@+id/tutorial_2"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 2" />
+            android:text="\u0022Print\u0022 statement \u0026 variable" />
 
         <Button
             android:id="@+id/tutorial_3"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 3" />
+            android:text="Operators( I )" />
 
         <Button
             android:id="@+id/tutorial_4"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 4" />
+            android:text="String function" />
 
         <Button
             android:id="@+id/tutorial_5"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 5" />
+            android:text="Operators( II )" />
 
         <Button
             android:id="@+id/tutorial_6"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 6" />
+            android:text="Condition Statement(I)" />
 
         <Button
             android:id="@+id/tutorial_7"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 7" />
+            android:text="Condition Statement(II)" />
 
         <Button
             android:id="@+id/tutorial_8"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Tutorial 8" />
+            android:text="While Loop" />
+        <Button
+            android:id="@+id/tutorial_9"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="For Loop" />
+        <Button
+            android:id="@+id/tutorial_10"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Nested Loop" />
+        <Button
+            android:id="@+id/tutorial_11"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Array" />
+        <Button
+            android:id="@+id/tutorial_12"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Main method" />
+        <Button
+            android:id="@+id/tutorial_13"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Java Encapsulation" />
+        <Button
+            android:id="@+id/tutorial_14"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Abstraction" />
+        <Button
+            android:id="@+id/tutorial_15"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Interfaces" />
+        <Button
+            android:id="@+id/tutorial_16"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Override Overload" />
+        <Button
+            android:id="@+id/tutorial_17"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Inheritance and Polymorphism" />
 
 
     </LinearLayout>
