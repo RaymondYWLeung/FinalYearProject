@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Tutorial01">
+        tools:context=".tutorial14">
 
         <TextView
             android:id="@+id/tutor14_title"
@@ -113,7 +113,7 @@
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            />
+         />
 
         <EditText
             android:id="@+id/tutor14_Content08"

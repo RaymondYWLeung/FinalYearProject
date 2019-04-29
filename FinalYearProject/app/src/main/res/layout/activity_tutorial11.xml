@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Tutorial01">
+        tools:context=".tutorial11">
 
         <TextView
             android:id="@+id/tutor11_title"
@@ -48,7 +48,7 @@
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-
+        
         <TextView
             android:id="@+id/tutor11_Content03"
             android:layout_width="match_parent"

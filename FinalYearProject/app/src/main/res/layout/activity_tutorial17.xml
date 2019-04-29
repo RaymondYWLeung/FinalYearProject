@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Tutorial01">
+        tools:context=".tutorial17">
 
         <TextView
             android:id="@+id/tutor17_title"
@@ -37,16 +37,16 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tutor17_Content02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alike"
-            android:padding="10dp"
-            android:text="@string/tutorial17_Content02"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+        android:id="@+id/tutor17_Content02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alike"
+        android:padding="10dp"
+        android:text="@string/tutorial17_Content02"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tutor17_Content03"
@@ -59,6 +59,14 @@
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/inher_type"
+            android:layout_gravity="center"
+            />
 
         <TextView
             android:id="@+id/tutor17_Content04"
@@ -122,6 +130,7 @@
             android:textColor="@android:color/white"
             android:background="#222222"
             android:textSize="16sp" />
+
     </LinearLayout>
 
 </ScrollView>

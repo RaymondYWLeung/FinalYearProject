@@ -66,7 +66,7 @@
 
 
     //Tutorial 01
-    <string name="tutorial01_title">Introduction</string>
+    <string name="tutorial01_title">\nIntroduction\n</string>
     <string name="tutorial01_History">History</string>
     <string name="tutorial01_Content01">Java is a programming language, also is a platform.
         It is create by James Gosling and Henry McGilton.It was first released by Sun Microsystem in
@@ -87,17 +87,12 @@
     </string>
 
 
-
-
     //Tutorial 02a
-    <string name="tutorial02_title">&quot;Print&quot; statement,Variable type and Syntax</string>
-    <string name="tutorial02_Content01">Print different statement simply on the console\n
-        Example: &quot;Hello World&quot;, &quot;Testing 1 2 3 4&quot;
+    <string name="tutorial02_title">\n&quot;Print&quot; statement,\nVariable type and Syntax\n</string>
+    <string name="tutorial02_Content01">Print different statement simply on the console\nExample: &quot;Hello World&quot;, &quot;Testing 1 2 3 4&quot;
     </string>
     <string name="tutorial02_Content02">
-     System.out.printf(&quot;sth&quot;); will print multiple arguments between quotes on same line.\n
-        System.out.println(&quot;sth&quot;); will print what between quotes &quot; &quot;and move printing cursor to next line.\n
-        System.out.print (&quot;sth&quot;); will print what is between quotes, leave printing cursor on same line.
+     System.out.printf(&quot;sth&quot;);\nwill print multiple arguments between quotes on same line.\n\nSystem.out.println(&quot;sth&quot;); will print what between quotes and move printing cursor to next line.\n\nSystem.out.print (&quot;sth&quot;); will print what is between quotes, leave printing cursor on same line.
     </string>
     <string name="tutorial02_Firstjava_example">class MyFirstJava{\n\n
     //This program will print Hello World as output\n
@@ -107,9 +102,7 @@
         \n\n\t\t}
         \n\t}
     </string>
-    <string name="tutorial02_Content03">\nPlease ignore the class and the main function first.\n
-        &quot;System&quot; class and &quot;out&quot; stream are used to access println method.
-        &quot;println&quot; means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
+    <string name="tutorial02_Content03">Please ignore the class and the main function first.&quot;System&quot; class and &quot;out&quot; stream are used to access println method.&quot;println&quot; means print a line of the text on the console.In java syntax, semicolon(;) must be added on the statement ending.
     </string>
     <string name="tutorial02_Testing_example">
         \npublic class TestingJava {\n\n
@@ -136,26 +129,22 @@
     </string>
 
 
-
-
     //Tutorial 02b
-    <string name="tutorial02_title2">Variable type</string>
+    <string name="tutorial02_title2">\nVariable type\n</string>
     <string name="tutorial02_Content04">Variables are containers that contain the data in different types.Java have the following variable types:\n\n
         A.   boolean: contains true or false value in it.\n
         B.   int: contains integer in it.\n
-        C.   float: store floating point numbers, decimals also.\n
+        C.   float: store floating point, decimals also.\n
         D.   double: store fractional numbers.\n
-        E:   char: cointain a character in this type.\n
-        F:   string: store a text or an sentence in it.\n
+        E.   char: cointain a character in this type.\n
+        F.   string: store a text or an sentence in it.\n
     </string>
     <string name="tutorial02_Content05">Syntax of declare variable:\n
         [data type] [variable name] = [value];
     </string>
-    <string name="tutorial02_Content06">Type Casting is an action that assign a variable from one type to another type.There are two types of casting in java,they are widening casting and narrowing casting\n</string>
-    <string name="tutorial02_title3">1.Widening Casting</string>
-    <string name="tutorial02_Content07">Widening conversion takes place when two data types are automatically converted.This happens when\n
-    a)The two data types are compatible.\n
-        b)When we assign value of a smaller data type to a bigger data type.</string>
+    <string name="tutorial02_Content06">Type Casting is an action that assign a variable from one type to another type.There are two types of casting in java,they are(1) widening casting and (2) narrowing casting\n</string>
+    <string name="tutorial02_title3">1. Widening Casting</string>
+    <string name="tutorial02_Content07">Widening conversion takes place when two data types are automatically converted.This happens when:\na)The two data types are compatible.\nb)When assign a smaller data type value to a bigger data type.</string>
     <string name="tutorial02_myclass">public class MyClass{\n
         public static void main(String[] args){\n\n
         \tint myInt = 9;\n
@@ -166,9 +155,9 @@
         \n\n\t\t\t}
         \n\t\t}
     </string>
-    <string name="tutorial02_title4">2.Narrowing Casting</string>
+    <string name="tutorial02_title4">2. Narrowing Casting</string>
     <string name="tutorial02_Content08">If we want to assign a value of larger data type to a smaller data type we perform explicit type casting or narrowing.
-        This is useful for incompatible data types where automatic conversion cannot be done.Here, target-type specifies the desired type to convert the specified value to
+        This is useful for incompatible data types where automatic conversion cannot be done.Here, target-type specifies the desired type to convert the specified value.
     </string>
     <string name="tutorial02_myclasstwo">public class MyClassTwo{\n
         public static void main(String[] args) {\n\n
@@ -182,21 +171,19 @@
     </string>
 
     //Tutorial 02c
-    <string name="tutorial02_title5">Variable Syntax</string>
+    <string name="tutorial02_title5">\nVariable Syntax\n</string>
     <string name="tutorial02_Content09">There are some rules to declare a variable.\n\n
         1. Variables are case sensitive.\n
-        2. All identifiers should start with a letter,\n\t\teither uppercase or lowercase letter.\n
+        2. All identifiers should start with a letter,either uppercase or lowercase letter.\n
         3. Some Java keyword cannot be used as identifier.\n
-        4. Characters  are only allowed after any combination\n\t\tof the first character\n
+        4. Characters  are only allowed after any combination of the first character\n
         5. Currency character or an underscore are allowed to create.
     </string>
     <string name="tutorial02_Content10">Java Keyword Reference:</string>
 
 
-
-
     //Tutoiral 03
-    <string name="tutorial03_title">Operators(I)</string>
+    <string name="tutorial03_title">\nOperators(I)\n</string>
     <string name="tutorial03_Content01">There are differents types of operators in Java for perform different operation.
         It can divide into several groups:\n\n
         1. Arithmetic operators\n
@@ -209,9 +196,8 @@
     <string name="tutorial03_Content04">Assignment operators: This operators are used for assign the values in the variable</string>
 
 
-
     //Tutorial 04
-    <string name="tutorial04_title">String and String Function</string>
+    <string name="tutorial04_title">\nString and String Function\n</string>
     <string name="tutorial04_Content01">String is a sequence of characters and it treated as object.</string>
     <string name="tutorial04_Content02">class MyFirstJava {\n
         //This program will print a sentence as output\n
@@ -242,25 +228,28 @@
         //The output length will be 5
     </string>
     <string name="tutorial04_title4">\t3. Uppercase and Lowercase String</string>
-    <string name="tutorial04_Content08">Uppercase and lowercase method can let you change the string to uppercase or lowercase easily.\n
-        String message = &quot;Hello World&quot;;\n
+    <string name="tutorial04_Content08">Uppercase and lowercase method can let you change the string to uppercase or lowercase easily.
+    </string>
+    <string name="tutorial04_Content08a">String message = &quot;Hello World&quot;;\n
         System.out.println( message.toUpperCase() );\n
         //Outputs &quot;HELLO WORLD&quot;\n
         System.out.println( message.toLowerCase() );\n
         //Outputs &quot;hello world&quot;
     </string>
     <string name="tutorial04_title5">\t4. String Concatenation</string>
-    <string name="tutorial04_Content09">Like a value, String also can be concatenate with a plus &quot;+&quot; operator.Anew string will be created.\n
-        String message1 = &quot;Java&quot;;\n
-        String message2 = &quot;World&quot;;\n
-        System.out.println( message1 + &quot; &quot; + message2);\n
+    <string name="tutorial04_Content09">Like a value, String also can be concatenate with a plus &quot;+&quot; operator.Anew string will be created.
+    </string>
+    <string name="tutorial04_Content09a">String message1 = &quot;Java&quot;;\nString message2 = &quot;World&quot;;\nSystem.out.println( message1 + &quot; &quot; + message2);\n
         //Output a new String &quot;Java World&quot;
     </string>
     <string name="tutorial04_title6">\t5. Finding String</string>
-    <string name="tutorial04_Content10">If you want to find the text location, you can use the indexOf() function to find the occurence string.A position number will shown after calling this function. However, it can also find the string from  the specified index.\n
-        int indexOf(String str)\n
+    <string name="tutorial04_Content10">If you want to find the text location, you can use the indexOf() function to find the occurence string.
+        A position number will shown after calling this function. However, it can also find the string from  the specified index.\n
+    </string>
+    <string name="tutorial04_Content10a">int indexOf(String str)\n
         String message = &quot;Java is a programming language&quot;;\n
-        System.out.println( message.indexOf(&quot;language&quot;));//Outputs 19\n\n
+        System.out.println( message.indexOf(&quot;language&quot;));\n
+        //Outputs 19\n\n
         int indexOf(String str, int fromIndex)\n
         //fromIndex: the index to start the search form\n
         String message1 = &quot;Java is a programming language&quot;;\n
@@ -272,32 +261,431 @@
     <string name="tutorial04_Content11">Substring is a method that select a substring to ba a new string.
         It can be used by passing a start index or both start index and end index.
         Please note that -1 can be represent the last character of  the end index.\n
-        substring( int Startindex)\n
+    </string>
+    <string name="tutorial04_Content11a">substring( int Startindex)\n
         String message = &quot;Java is a programming language&quot;;\n
-        System.out.println( message.substring( 11 )); //Outputs &quot;gramming language&quot;\n
-        substring(int Startindex, int Endindex)\n
-        String message = &quot;Java is a programming language&quot;;\nSystem.out.println( message.substring( 19,-1 ));//Outputs &quot;language&quot;
+        System.out.println( message.substring( 11 ));\n//Outputs &quot;gramming language&quot;\nsubstring(int Startindex, int Endindex)\nString message = &quot;Java is a programming language&quot;;\nSystem.out.println( message.substring( 19,-1 ));
+        \n//Outputs &quot;language&quot;
     </string>
 
     <string name="tutorial04_title8">\t7. Replace String</string>
-    <string name="tutorial04_Content12">This method replace a new string from a old string.\nString str = &quot;Java is a programming language&quot;;\nSystem.out.println(str.replace(‘v’,’k’) );//Outputs &quot;Jaka is a programming language&quot;\nSystem.out.println(str.replace(‘p’,’P’) );//Outputs &quot;Java is a Programming language&quot;
+    <string name="tutorial04_Content12">This method replace a new string from a old string.
+    </string>
+    <string name="tutorial04_Content12a">String str = &quot;Java is a programming language&quot;;\n
+        System.out.println(str.replace(‘v’,’k’) );\n
+        //Outputs &quot;Jaka is a programming language&quot;\n
+        System.out.println(str.replace(‘p’,’P’) );\n
+        //Outputs &quot;Java is a Programming language&quot;
     </string>
 
     <string name="tutorial04_title9">\t8. Split String</string>
+    <string name="tutorial04_Content13">The string split() method breaks a given string around matches of the given regular expression.</string>
+    <string name="tutorial04_Content13a">// Java program to demonstrate working of split(regex,limit) with high limit.\npublic class GFG {\n
+        public static void main(String args[]) {\n
+		\tString str = &quot;javas@for@javas&quot;;\n\tString[] arrOfStr = str.split(&quot;@&quot;, 5);\n\nfor (String a : arrOfStr)\n
+			\tSystem.out.println(a);\n}\n}
+    </string>
+    <string name="tutorial04_Content13b">Output:\njavas\nfor\njavas</string>
     <string name="tutorial04_title10">\t9. Equal String</string>
+    <string name="tutorial04_Content14">In Java, string equals() method compares the two given strings based on the data/content of the string. If all the contents of both the strings are same then it returns true. If all characters do not match, then it returns false.</string>
+    <string name="tutorial04_Content14a">// Java program to Compare two strings\n// lexicographically\n
+        public class GFG {\n
+        \tpublic static void main(String args[]) {\n
+        \t\tString string1 = new String(&quot;javasforjavas&quot;);\n
+        \t\tString string2 = new String(&quot;Practice&quot;);\n
+        \t\tString string3 = new String(&quot;Javas&quot;);\n
+        \t\tString string4 = new String(&quot;Javas&quot;);\n
+        \t\tString string5 = new String(&quot;javas&quot;);\n\n
+        // Comparing for String 1 != String 2\n
+		\tSystem.out.println(&quot;Comparing&quot; + string1 + &quot; and &quot; + string2
+						+ &quot; : &quot; + string1.equals(string2));\n
 
+		// Comparing for String 3 = String 4\n
+		\tSystem.out.println(&quot;Comparing &quot; + string3 + &quot; and &quot; + string4
+						+ &quot; : &quot; + string3.equals(string4));\n
 
+		// Comparing for String 4 != String 5\n
+		System.out.println(&quot;Comparing &quot; + string4 + &quot; and &quot;v + string5
+						+ &quot; : &quot; + string4.equals(string5));\n
+
+		// Comparing for String 1 != String 4\n
+		System.out.println(&quot;Comparing &quot; + string1 + &quot; and &quot; + string4
+						+ &quot; : &quot; + string1.equals(string4));\t\n}\n}
+</string>
+    <string name="tutorial04_Content14b">Output:\nComparing javasforjavas and Practice : false\nComparing javasforjavas and javasforjavas : true\nComparing Javasforjavas and javasforjavas : false</string>
 
 
     //tutorial05
-    <string name="tutorial05_title">Operators(II)</string>
+    <string name="tutorial05_title">\nOperators(II)\n</string>
     <string name="tutorial05_Content01">This chapter is the extension of chapter 5.
     This chapter will mainly focus on Java Comparison Operators and Logical Operators.\n\nComparison Operators: This operators is mainly for compare purpose on two values.
     </string>
     <string name="tutorial05_Content02">Logical Operators: Logical Operators checks that the argument is True or False</string>
 
     //tutorial06
-    <string name="tutorial06_title">Condition statement(I): if..else statement</string>
+    <string name="tutorial06_title">\nCondition statement(I): if..else statement\n</string>
+    <string name="tutorial06_Content01">If statement</string>
+    <string name="tutorial06_Content02">This statement requires conditional statement, if the condition is true, operation will be performed inside the statement block.</string>
+    <string name="tutorial06_Content03">int a = 20;\nint b =10;\nif(a > b){\n
+        System.out.println(&quot;it is greater than 10&quot;);\t\n}
+</string>
+    <string name="tutorial06_Content04">Else if / Nested if statement</string>
+    <string name="tutorial06_Content05">This statement is used to specify a new condition while the if statement block is false. If it met the condition in the if..else statement, operation perform in the statement block. </string>
+    <string name="tutorial06_Content06">int number = 16;\nif(number > 20){\n
+        \t\tSystem.out.println(&quot;it is greater than 20&quot;);\n}\nelseif(number > 15){\n
+        \t\tSystem.out.println(&quot;it is greater than 15&quot;);\n}
+</string>
+    <string name="tutorial06_Content07">Else statement</string>
+    <string name="tutorial06_Content08">This statement is handle the false condition while all condition is false.</string>
+    <string name="tutorial06_Content09">int number = 16;\nif(number > 20){\n
+        \t\tSystem.out.println(&quot;it is greater than 20&quot;);\n}\n
+        elseif(number > 15){\n
+        \t\tSystem.out.println(&quot;it is greater than 15&quot;);\n
+        }\n
+        else{\n\t
+        System.out.println(&quot;it is less than or equal to 15&quot;);\n}
+</string>
+    <string name="tutorial06_Content10">Empty</string>
+
+
+    //tutorial07
+    <string name="tutorial07_title">\nCondition statement(II) : Switch Statement\n</string>
+    <string name="tutorial07_Content01">Switch statement is the advance version for if else statement. It accept multiple case, which allows multiple execution paths.</string>
+    <string name="tutorial07_Content02">Case value: Each value of expression will pass into the case and compare.\n\nBreak keyword: Break out of the switch block when break keyword is used.\n\nDefault keyword: if the value of expression is not suitable for all case,it will switch to default case.</string>
+    <string name="tutorial07_Content03">1. Switch statement can only use once\n2. Only accept integers, string and enums\n3. Case Value must be same type in switch statement\n4. Default are optional\n5. Break are optional, not all case need break\nbut it requires at least a break.
+    </string>
+    <string name="tutorial07_Content04">
+        \tclass MyJavaProgramming{\n
+        \t\tpublic static void main(String args[]){\n
+        \t\tchar grade =&#39;D&#39;\n
+        \t\tswitch(grade){\n
+        \t\t\tcase&#39;A&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade A&quot;);\n\t\t\t\tbreak;\n
+        \t\t\tcase &#39;B&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade B&quot;);\n\t\t\t\tbreak;\n
+        \t\t\tcase &#39;C&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade C&quot;);\n\t\t\t\tbreak;\n
+        \t\t\tcase&#39;D&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade D&quot;);\n\t\t\t\tbreak;\n
+        \t\t\tcase&#39;E&#39;:\n\t\t\t\tSystem.out.printn(&quot;Grade E&quot;);\n\t\t\t\tbreak;\n
+        \t\tdefault:\n
+        \t\t\tSystem.out.println(&quot;Invalid Grade&quot;);\n
+        \t\t}\n
+        \t\t\tSystem.out.println(&quot;Your Grade&quot;);\n\t}
+</string>
+    <string name="tutorial07_Content03b">Example:</string>
+    <string name="tutorial07_Content03a">Rule of using Switch case:</string>
+
+
+    //tutorial08
+    <string name="tutorial08_title">\nLoop Control (I) While, Do&#46;&#46;&#46;While Loop\n</string>
+    <string name="tutorial08_Content01">This enable a part of code to be executed until a set of condition is meet.Moreover, it can separate into several loops:\n
+        \t1.While Loop\n
+        \t2.Do&#46;&#46;&#46;While Loop\n
+        \t3.for Loop\nIn this chapter, it will mainly focus on (1) and (3)
+</string>
+    <string name="tutorial08_Content02">While Loops</string>
+    <string name="tutorial08_Content03">It repeats statement when condition is true.</string>
+    <string name="tutorial08_Content04">int x = 0;\nwhile (x&lt;10) {\n
+  		\tSystem.out.println(i);\n
+        \tx++;\n}
+</string>
+    <string name="tutorial08_Content05">Do&#46;&#46;&#46;While Loops</string>
+    <string name="tutorial08_Content06">It will execute the codes at least once whether the condition is True or False. It repeats a statement while it is true.</string>
+    <string name="tutorial08_Content07">int x = 10;\n
+        \tdo {\n
+        \t\tSystem.out.print(&quot;value of x:&quot;+ x);\n
+        \t\tx++;\n
+        \t\tSystem.out.print(&quot;&#47;n&quot;);\n
+        \t}\n
+        while( x&lt;20 );</string>
+
+
+    //tutorial09
+    <string name="tutorial09_title">\nLoop Control (II)\nFor Loop and For-Each Loop\n</string>
+    <string name="tutorial09_Content01">For Loop </string>
+    <string name="tutorial09_Content02">It loop a statement  of code for several times. Inside the &#40;&#41;,
+        it defines the variable, set the conditions for the code block and count each times.\n\nFormat&#58; for&#40; Initialization &#59; Condition &#59; Increment&#41;\n
+</string>
+    <string name="tutorial09_Content03">for (int i = 0; i &gt; 5; i++) {\n
+        \tSystem.out.println(i);\n}
+</string>
+    <string name="tutorial09_Content04">For Each Loop</string>
+    <string name="tutorial09_Content05">In for loop, it can also loop an array through for-each Loop.</string>
+    <string name="tutorial09_Content06">String[] cars = {&quot;Ada&quot;, &quot;Billy&quot;, &quot;Carmen&quot;, &quot;Milly&quot;};\n
+        \t\tfor (String x&#58;name) {\n
+        \t\t\tSystem.out.println(x);\n}
+</string>
+    <string name="tutorial09_Content07">Empty</string>
+
+
+    //tutorial10
+    <string name="tutorial10_title">\nLoop Control (III)\n Nested loop and Loop control Statement\n</string>
+    <string name="tutorial10_Content01">Nested Loop: A loop exists inside the body with another loop is called nesting.</string>
+    <string name="tutorial10_Content02">for (int i = 1; i &lt;= 5; i++) {\n
+        \tSystem.out.println(&quot;Outer loop iteration&quot; + i);\n
+        \tfor (int j = 1; j &lt;&#61; i; j++) {\n
+        \tSystem.out.println(&quot;i = &quot; + i + &quot;; j = &quot; + j);\n
+  	\t}\n}
+</string>
+    <string name="tutorial10_Content03">Loop control Statement：</string>
+    <string name="tutorial10_Content04">&quot;break&quot; statement: it terminates in the loop or switch statement</string>
+    <string name="tutorial10_Content05">for(int x : numbers ) {\n
+        if( x == 30 ) {\n\tbreak;\n}</string>
+    <string name="tutorial10_Content06">&quot;continue&quot; statement: retest the condition of the loop</string>
+    <string name="tutorial10_Content07">for(int x : numbers ) {\n
+        if( x == 30 ) {\n\tcontinue;\n}</string>
+
+
+    //tutorial11
+    <string name="tutorial11_title">\nArray\n</string>
+    <string name="tutorial11_Content01">To use an array in program, you must declare an array first.Syntax:  int[] intList;\n\nTo insert value into array, it can use array literal with comma inside:int[] intList = {1,2,3,4,5};
+</string>
+    <string name="tutorial11_Content02">Access the element：</string>
+    <string name="tutorial11_Content03">Inside the element, it will have the index number to represent the element.
+        Please note that all index must be start with 0, it also represent the first element
+</string>
+    <string name="tutorial11_Content04">For Example: intList[0] = 1 // first element\nintList[1] = 2 // second element\nintList[4] = 5
+</string>
+    <string name="tutorial11_Content05">Change element</string>
+    <string name="tutorial11_Content06">When replacing the element, add an new value into the element respectively.</string>
+    <string name="tutorial11_Content07">For Example: intList[0] = 0  // first element\nSo the updated intList array will be &#123;0,2,3,4,5&#125;;
+</string>
+    <string name="tutorial11_Content08">Array Element Processing</string>
+    <string name="tutorial11_Content09">Array Length</string>
+    <string name="tutorial11_Content10">Use &quot;length&quot; property to count the number of elements in the array.</string>
+    <string name="tutorial11_Content11">String[] intList = {0,2,3,4,5};\n
+        System.out.println(intList.length);// Outputs 5</string>
+    <string name="tutorial11_Content12">Array Looping</string>
+    <string name="tutorial11_Content13">To access all the elements, it can use for loop and length property to specify the total of loops.
+        It can represent in normal for loop or for-Each loop.
+</string>
+    <string name="tutorial11_Content14">For loop</string>
+    <string name="tutorial11_Content15">String[] cars = {&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Ford&quot;, &quot;Mazda&quot;};\n
+        for (int i = 0; i &#60; cars.length; i++) {\n
+        System.out.println(cars[i]);\n}
+</string>
+    <string name="tutorial11_Content16">For each loop</string>
+    <string name="tutorial11_Content17">String[] cars = {&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Ford&quot;, &quot;Mazda&quot;};\n
+        \t\tfor (String i : cars) {\n
+        System.out.println(i);\n}
+</string>
+    <string name="tutorial11_Content18">Empty</string>
+
+
+    //tutorial12
+    <string name="tutorial12_title">\nClass main method\n</string>
+    <string name="tutorial12_Content01">public class MyFirstJavaProgram {\n
+        //This is my first java program.\n
+        //This will print &#39;Hello World&#39; as the output\n\n
+        public static void main(String []args) {\n
+        \tSystem.out.println(&quot;Hello World&quot;); // prints Hello World\n}
+}</string>
+    <string name="tutorial12_Content02">empty</string>
+    <string name="tutorial12_Content03">empty</string>
+    <string name="tutorial12_Content04">empty</string>
+    <string name="tutorial12_Content05">empty</string>
+
+
+    //tutorial13
+    <string name="tutorial13_title">\nJava Encapsulation\n</string>
+    <string name="tutorial13_Content01">The meaning of Encapsulation, is to make sure that &quot;sensitive&quot; data is hidden from users.
+        To achieve this, you must:</string>
+    <string name="tutorial13_Content02">1. declare class variables/attributes as private (only accessible within the same class)\n2. provide public setter and getter methods to access and update the value of a private variable</string>
+    <string name="tutorial13_Content03">Setter/Getter: In Java, getter and setter are two conventional methods
+        that are used for retrieving and updating value of a variable, in order to make manage the accessible of the variables.\n
+        \tGetter: Retrieving value of the variable\n
+        \tSetter: Updating Value of the variable
+    </string>
+    <string name="tutorial13_Content04">public class SimpleGetterAndSetter {\n
+    \tprivate int number;\n\n\t
+        public int getNumber() {\n\t\t
+        return this.number;\n
+    \t}\n\n
+        \tpublic void setNumber(int num) {\n
+        \t\tthis.number = num;\n
+    \t}\n}
+</string>
+    <string name="tutorial13_Content05">\nNaming convention:\n</string>
+    <string name="tutorial13_Content06">The naming scheme of setter and getter should follow Java bean naming conventions follows:
+        getXXX() and setXXX(),where XXX is name of the variable.
+</string>
+    <string name="tutorial13_Content07">Empty</string>
+    <string name="tutorial13_Content08">Empty</string>
+
+
+    //tutorial14
+    <string name="tutorial14_title">\nAbstraction\n</string>
+    <string name="tutorial14_Content01">Abstract Class</string>
+    <string name="tutorial14_Content02">A class which contains the abstract keyword in its declaration is known as abstract class.\n
+        An abstract class is mostly used to provide a base for subclasses to extend and implement
+        the abstract methods and override or use the implemented methods in abstract class.
+</string>
+    <string name="tutorial14_Content03">Rules of Abstract class</string>
+    <string name="tutorial14_Content04">1. Abstract classes may or may not contain abstract methods,i.e. methods without body (public void get();)\n
+        2. But, if a class has at least one abstract method, then the class must be declared abstract.\n
+        3. If a class is declared abstract, it cannot be instantiated.\n
+        4. To use an abstract class, you have to inherit it from another class, provide implementations to the abstract methods in it.\n
+        5. If you inherit an abstract class, you have to provide implementations to all the abstract public
+</string>
+    <string name="tutorial14_Content05">abstract class Person {\n
+        \tprivate String name;\n
+        \tprivate String gender;\n\n
+
+	\tpublic Person(String nm, String gen){\n
+        \t\tthis.name=nm;\n
+		\t\tthis.gender=gen;\n
+        \t}\n\n
+
+	//abstract method\n
+	\tpublic abstract void work();\n
+        \tpublic String toString(){\n
+		\t\treturn &quot;Name=&quot;+this.name+&quot;:Gender=&quot;+this.gender;\n
+        \t}\n\n
+        \tpublic void changeName(String newName) {\n\t\tthis.name = newName;\t\n}\n}</string>
+    <string name="tutorial14_Content06">Inherit Abstract Class</string>
+    <string name="tutorial14_Content07">Notice that work() is an abstract method and it has no-body.
+        Here is a concrete class example extending an abstract class in java.</string>
+    <string name="tutorial14_Content08">public class Employee extends Person {\n
+        \tprivate int empId;\n
+        \tpublic Employee(String nm, String gen, int id) {\n
+        \t\tsuper(nm, gen);\n
+        \t\tthis.empId=id;\n
+        \t}\n@Override\n
+	\tpublic void work(){\n
+        \t\tif(empId == 0){\n
+        \t\tSystem.out.println(&quot;Not working&quot;);\n}\n
+        \telse{\n
+        \t\tSystem.out.println(&quot;Working as employee!!&quot;);\n}\n}\n
+        \tpublic static void main(String args[]){\n//coding in terms of abstract classes\n
+        Person student = new Employee(&quot;Dove&quot;,&quot;Female&quot;,0);\n
+        Person employee = new Employee(&quot;Pan&quot;,&quot;Male&quot;,123);\n
+        \t\tstudent.work();\n
+        \t\temployee.work();\n//using method implemented in abstract class,inheritance\n
+        \t\temployee.changeName(&quot;Pankaj Kumar&quot;);\n
+        \t\tSystem.out.println(employee.toString());\n}\n}\n</string>
+    <string name="tutorial14_Content09">Abstract Method</string>
+    <string name="tutorial14_Content10">If you want a class to contain a particular method but you want
+        the actual implementation of that method to be determined by child classes,
+        can declare the method in the parent class as an abstract.</string>
+    <string name="tutorial14_Content11">public abstract class Employee {\n
+        \tprivate String name;\n
+        \tprivate String address;\n
+        \tprivate int number;\n
+        \tpublic abstract double computePay();\n
+   		// Remainder of class definition\n}\n</string>
+    <string name="tutorial14_Content12">Declaring a method as abstract has two consequences:\n1. The class containing it must be declared as abstract.\n2. Any class inheriting the current class must either override the abstract method or declare itself as abstract.
+</string>
+    <string name="tutorial14_Content13">empty</string>
+
+    //tutorial15
+    <string name="tutorial15_title">\nInterface\n</string>
+    <string name="tutorial15_Content01">An interface is an abstract &quot;class&quot;
+        that is used to group related methods with &quot;empty&quot; bodies.\n
+        It can contains constants,default static and nested types. </string>
+    <string name="tutorial15_Content02">Declaring Interfaces</string>
+    <string name="tutorial15_Content03">we can declare interface by using &quot;interface&quot; keyword</string>
+    <string name="tutorial15_Content04">interface Animal {\n
+  		\tpublic void animalSound();\n
+        \t// interface method (does not have a body)\n
+  		\tpublic void run();\n
+        \t// interface method (does not have a body)\n}
+</string>
+    <string name="tutorial15_Content05">Implementing Interface</string>
+    <string name="tutorial15_Content06">we can use &quot;implements&quot; keyword when implement by class.</string>
+    <string name="tutorial15_Content07">class Pig implements Animal {\n
+        \tpublic void animalSound() {\n
+        \t// The body of animalSound() is provided here\n
+        \t\tSystem.out.println(&quot;The pig says: wee wee&quot;);\n
+  		\t}\n\n
+        \tpublic void sleep() {\n
+        \t// The body of sleep() is provided here\n
+        \t\tSystem.out.println(&quot;Zzz&quot;);\n\t}\n}\n\n
+        \tclass MyMainClass {\n
+        \tpublic static void main(String[] args) {\n
+        \t\tPig myPig = new Pig();\n
+        \t\t// Create a Pig object\n
+		\tmyPig.animalSound();\n
+        \t\tmyPig.sleep();\n}\n}
+</string>
+    <string name="tutorial15_Content08">empty</string>
+
+
+    //tutorial16
+    <string name="tutorial16_title">\nOverride,Overload\n</string>
+    <string name="tutorial16_Content01">Overriding</string>
+    <string name="tutorial16_Content01a">Two or more methods in one class have the same
+        method name but different parameters.</string>
+    <string name="tutorial16_Content02">class Dog{\n
+    \tpublic void bark(){\n
+        \t\tSystem.out.println(&quot;woof&quot;);\n
+        \t}\n}\n\n
+        \tclass Hound extends Dog{\n
+        \t\tpublic void sniff(){\n
+        \t\t\tSystem.out.println(&quot;sniff&quot;);\n
+    \t}\n\n
+        \tpublic void bark(){\n
+        \t\tSystem.out.println(&quot;bowl&quot;);\t\n}\n}\n\n
+        \tpublic class OverridingTest{\n
+        \t\tpublic static void main(String [] args){\n
+        \t\t\tDog dog = new Hound();\n
+        \t\t\tdog.bark();\n}\n}</string>
+    <string name="tutorial16_Content03">Overloading</string>
+    <string name="tutorial16_Content03a">Two methods with the same method name and
+        parameters (i.e. method signature).One of the methods is in the parent class and the other
+        is in the child class.Overriding allows a child class to provide a specific
+        implementation of a method that is already provided its parent class</string>
+    <string name="tutorial16_Content04">class Dog{\n
+    \tpublic void bark(){\n
+        \t\tSystem.out.println(&quot;woof&quot;);\n}\n
+        \t//overloading method\n
+        \tpublic void bark(int num){\n
+    	\t\tfor(int i=0; i&lt;num; i++)\n
+        \t\t\tSystem.out.println(&quot;woof&quot;);\n}\n
+}</string>
+    <string name="tutorial16_Content05">Different between overriding and overloading:</string>
+    <string name="tutorial16_Content06">empty</string>
+    <string name="tutorial16_Content07">empty</string>
+    <string name="tutorial16_Content08">empty</string>
+
+
+    //tutorial17
+    <string name="tutorial17_title">Inheritance and Polymorphism</string>
+    <string name="tutorial17_Content01">Inheritance</string>
+    <string name="tutorial17_Content02">In Java, it is possible to inherit attributes and methods from one class to another.
+        We group the &quot;inheritance concept&quot; into two categories:</string>
+    <string name="tutorial17_Content03">subclass (child) - the class that inherits from another class
+superclass (parent) - the class being inherited from
+</string>
+    <string name="tutorial17_Content04">To inherit from a class, use the extends keyword.</string>
+    <string name="tutorial17_Content05">class Vehicle {\n
+  \tprotected String brand = &quot;Ford&quot;;\n\t// Vehicle attribute\n
+  \tpublic void honk() {\n\t// Vehicle method\n
+        \t\tSystem.out.println(&quot;Tuut, tuut!&quot;);\n
+  \t}\n}\n\n
+        \tclass Car extends Vehicle {\n
+        \t\tprivate String modelName = &quot;Mustang&quot;;\n
+        \t\t// Car attribute\n
+        \tpublic static void main(String[] args) {\n
+        \t// Create a myCar object\n
+        \t\tCar myCar = new Car();\n
+        \t// Call the honk() method from Vehicle class\n
+        \t\tmyCar.honk();\n
+        \t\tSystem.out.println(myCar.brand +&quot; &quot;+ myCar.modelName);\n\t}\n}\n
+</string>
+    <string name="tutorial17_Content06">Polymorphism</string>
+    <string name="tutorial17_Content07">Polymorphism means &quot;many forms&quot;,
+        and it occurs when we have many classes that are related to each other by inheritance.
+        Like specified in above,Inheritance lets us inherit attributes and methods from another class.
+        Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.</string>
+    <string name="tutorial17_Content08">class Animal {\n
+        \tpublic void animalSound() {\n
+        \t\tSystem.out.println(&quot;The animal makes a sound&quot;);\n
+        \t}\n}\n
+        \tclass Pig extends Animal {\n
+        \t\tpublic void animalSound() {\n
+        \t\tSystem.out.println(&quot;The pig says: wee wee&quot;);\n
+        \t}\n}\n
+        \tclass Dog extends Animal {\n
+        \tpublic void animalSound() {\n
+        \t\tSystem.out.println(&quot;The dog says: bow wow&quot;);\n\t}\n}\n
+</string>
 
 
     <!-- Strings related to Settings -->
@@ -383,7 +771,7 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
+    <string name="permission_rationale">&quot;Contacts permissions are needed for providing email
+        completions.&quot;
     </string>
 </resources>
