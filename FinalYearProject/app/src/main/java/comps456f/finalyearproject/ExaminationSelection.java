@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class ExaminationSelection extends AppCompatActivity implements View.OnClickListener{
 
-    private Button exam_but[] = new Button[8];
+    private Button exam_but[] = new Button[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,12 @@ public class ExaminationSelection extends AppCompatActivity implements View.OnCl
 
         if(id == R.id.exam_1){
             Intent act = new Intent(ExaminationSelection.this,Examination1.class);
+            startActivity(act);
+        }else if(id == R.id.exam_2){
+            Intent act = new Intent(ExaminationSelection.this,Examination2.class);
+            startActivity(act);
+        }if(id == R.id.exam_3){
+            Intent act = new Intent(ExaminationSelection.this,Examination3.class);
             startActivity(act);
         }
 

@@ -34,7 +34,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.lang.Math;
 
-public class Examination1 extends AppCompatActivity {
+public class Examination3 extends AppCompatActivity {
 
     //common variable
     int score = 0;
@@ -44,7 +44,7 @@ public class Examination1 extends AppCompatActivity {
     String questionAnswer = "";
     String questionType = "";
     //String url = "https://raymondsfypapi.herokuapp.com/api/examquestion/Exam01";
-    String url = "http://192.168.240.26:3000/api/templateQuestion/Exam01";
+    String url = "http://192.168.240.26:3000/api/templateQuestion/Exam03";
 
     //View for fib
     ArrayList<String> fibAns = new ArrayList<>();
@@ -129,7 +129,7 @@ public class Examination1 extends AppCompatActivity {
                     br.setTextSize(20);
                     exam.addView(br);
                     TextView title = new TextView(appContext);
-                    title.setText("Exam 1");
+                    title.setText("Exam 3");
                     title.setGravity(Gravity.TOP | Gravity.CENTER);
                     title.setTextColor(Color.BLACK);
                     title.setTextSize(42);

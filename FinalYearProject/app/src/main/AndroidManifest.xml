@@ -52,6 +52,8 @@
 
         <activity android:name=".ExaminationSelection" />
         <activity android:name=".Examination1" />
+        <activity android:name=".Examination2" />
+        <activity android:name=".Examination3" />
         <activity android:name=".Compiler" />
         <activity
             android:name=".ForumFrontPage"
