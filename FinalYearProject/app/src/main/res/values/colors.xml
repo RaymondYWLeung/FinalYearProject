@@ -9,4 +9,5 @@
     <color name="ide_white">#ffffff</color>
     <color name="ide_yellow">#ded375</color>
     <color name="ide_purple">#c635f7</color>
+    <color name="grey">#514f51</color>
 </resources>

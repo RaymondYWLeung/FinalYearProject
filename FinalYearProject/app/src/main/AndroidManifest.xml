@@ -58,6 +58,7 @@
         <activity
             android:name=".ForumFrontPage"
             android:label="@string/title_activity_forum_front_page" />
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>

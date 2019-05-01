@@ -1,5 +1,6 @@
 package comps456f.finalyearproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,18 +44,48 @@ public class MainActivity extends AppCompatActivity
         header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent act = new Intent(MainActivity.this,UserLogin.class);
+                Intent act = new Intent(MainActivity.this,Login.class);
                 startActivity(act);
             }
         });
 
+        String nickName = getSharedPreferences("user", MODE_PRIVATE).getString("USER", "Guest");
 
+        //if(nickName.equals("Login")){
+
+        TextView nav_nickName  = header.findViewById(R.id.nickname);
+        nav_nickName.setText(nickName);
+        //}
+
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        String nickName = getSharedPreferences("user", MODE_PRIVATE).getString("NICKNAME", "Guest");
+        Log.e("onRestart()",nickName);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        LinearLayout header = (LinearLayout) headerView.findViewById(R.id.nav_header);
+        TextView nav_nickName  = header.findViewById(R.id.nickname);
+        nav_nickName.setText(nickName);
+        //}
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        String nickName = getSharedPreferences("user", MODE_PRIVATE).getString("NICKNAME", "Login1111");
+        Log.e("Drawer",nickName);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+            View headerView = navigationView.getHeaderView(0);
+            LinearLayout header = (LinearLayout) headerView.findViewById(R.id.nav_header);
+            TextView nav_nickName  = header.findViewById(R.id.nickname);
+            nav_nickName.setText(nickName);
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -109,4 +141,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

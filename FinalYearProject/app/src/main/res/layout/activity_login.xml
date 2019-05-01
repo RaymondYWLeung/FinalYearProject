@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"/>
+        <EditText
+            android:id="@+id/et_password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"/>
+        <EditText
+            android:id="@+id/et_nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nickname"
+            android:padding="10sp"
+            android:background="@color/grey"
+            android:inputType="none"/>
+           <RadioGroup
+               android:id="@+id/radio_gp"
+               android:layout_height="wrap_content"
+               android:layout_width="match_parent">
+               <RadioButton
+                   android:id="@+id/rb_Signin"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Sign in"/>
+               <RadioButton
+                   android:id="@+id/rb_Register"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Register"/>
+           </RadioGroup>
+           <Button
+               android:layout_columnSpan="1"
+               android:id="@+id/but_Signin"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Submit"/>
+    </LinearLayout>
+</ScrollView >
