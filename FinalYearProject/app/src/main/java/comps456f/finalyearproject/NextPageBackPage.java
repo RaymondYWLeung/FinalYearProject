@@ -40,12 +40,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ForumFrontPage extends AppCompatActivity {
+public class NextPageBackPage extends AppCompatActivity {
 
     private String[] objectId;
     private String[] postTitle;
     private String[] userName;
     private String[] postDate;
+    private int counter;
 
     private ProgressDialog progressDialog;
 
@@ -55,6 +56,9 @@ public class ForumFrontPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum_front_page);
+
+        Intent intent = getIntent();
+        url = intent.getStringExtra("url");
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -67,7 +71,7 @@ public class ForumFrontPage extends AppCompatActivity {
         progressDialog.setMessage("Loading Post ....");
         progressDialog.show();
 
-
+        counter = Integer.parseInt(url.substring(url.length()-1,url.length()));
 
         //HTTP GET ok
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
@@ -110,7 +114,7 @@ public class ForumFrontPage extends AppCompatActivity {
                             public void onClick(View view) {
 
                                 Log.e("Button",view.getTag().toString());
-                                Intent Intent = new Intent(ForumFrontPage.this,SoloPost.class);
+                                Intent Intent = new Intent(NextPageBackPage.this,SoloPost.class);
                                 //Log.e("url", objectId[postNo]);
                                 Intent.putExtra("url","http://192.168.240.17:3000/api/viewIndpost/"+objectId[Integer.parseInt(view.getTag().toString())]);
                                 //finish();
@@ -126,19 +130,41 @@ public class ForumFrontPage extends AppCompatActivity {
 
                     }
 
-                    int buttonId = -1;
+                    int nextButtonId = 500;
                     Button nextPage = new Button(appContext);
                     nextPage.setText("Next Page");
                     nextPage.setTextColor(Color.BLACK);
                     nextPage.setTextSize(15);
-                    nextPage.setId(buttonId);
+                    nextPage.setId(nextButtonId);
                     content.addView(nextPage);
+
+                    if(!(counter==0)){
+                        int backBbuttonId = 501;
+                        Button backPage = new Button(appContext);
+                        backPage.setText("Back Page");
+                        backPage.setTextColor(Color.BLACK);
+                        backPage.setTextSize(15);
+                        backPage.setId(backBbuttonId);
+                        content.addView(backPage);
+
+                        backPage.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent Intent = new Intent(NextPageBackPage.this,NextPageBackPage.class);
+                                counter -= 1;
+                                Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/"+counter+"");
+                                finish();
+                                startActivity( Intent);
+                            }
+                        });
+                    }
 
                     nextPage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent Intent = new Intent(ForumFrontPage.this,NextPageBackPage.class);
-                            Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/1");
+                            Intent Intent = new Intent(NextPageBackPage.this,NextPageBackPage.class);
+                            counter += 1;
+                            Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/"+counter+"");
                             finish();
                             startActivity( Intent);
                         }

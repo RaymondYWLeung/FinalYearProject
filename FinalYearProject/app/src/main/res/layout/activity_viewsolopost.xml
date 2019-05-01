@@ -1,0 +1,46 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <LinearLayout
+        android:id="@+id/soloPost"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/postName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Post Name"
+            android:textSize="20dp" />
+
+
+        <GridLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:columnCount="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="User Name"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:text="Content"
+                android:textSize="20dp" />
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

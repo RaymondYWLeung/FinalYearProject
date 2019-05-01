@@ -1,5 +1,6 @@
 package comps456f.finalyearproject;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -44,7 +45,7 @@ public class Examination1 extends AppCompatActivity {
     String questionAnswer = "";
     String questionType = "";
     //String url = "https://raymondsfypapi.herokuapp.com/api/examquestion/Exam01";
-    String url = "http://192.168.240.26:3000/api/templateQuestion/Exam01";
+    String url = "http://192.168.240.17:3000/api/templateQuestion/Exam01";
 
     //View for fib
     ArrayList<String> fibAns = new ArrayList<>();
@@ -62,13 +63,15 @@ public class Examination1 extends AppCompatActivity {
     //Random question number
     ArrayList<Integer> questionNoArrayList = new ArrayList<>();
 
+    private ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination1);
 
-        while(questionNoArrayList.size()<=6){
+        while(questionNoArrayList.size()<=10){
             int randomQuestionNo = (int) (Math.random() * 13) + 1;
             if(!questionNoArrayList.contains(randomQuestionNo)){
                 questionNoArrayList.add(randomQuestionNo);
@@ -81,6 +84,9 @@ public class Examination1 extends AppCompatActivity {
 
         final Context appContext = getApplicationContext();
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading Question ....");
+        progressDialog.show();
 
         //HTTP GET ok
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
@@ -122,6 +128,8 @@ public class Examination1 extends AppCompatActivity {
                     for (int mcCount = 0; mcCount < resultForMc.length; mcCount++) {
                         resultForMc[mcCount] = Boolean.FALSE;
                     }
+
+                    progressDialog.dismiss();
 
                     //Text View of the title
                     TextView br = new TextView(appContext);
