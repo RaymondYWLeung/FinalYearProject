@@ -135,7 +135,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         }else if(id == R.id.but_Signin && booReg) {
             if (mNickname.equals("")) {
-                et_user.setError("Username cannot be empty");
+                et_user.setError("Nickname cannot be empty");
                 et_user.requestFocus();
 
             } else {
