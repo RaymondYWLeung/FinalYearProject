@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateComment">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/text_comment"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:text="Comment:"
+            />
+
+        <EditText
+            android:id="@+id/editText_comment"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:minLines="8"
+            />
+
+        <Button
+            android:id="@+id/post_comment_sumbit"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="submit"
+            />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

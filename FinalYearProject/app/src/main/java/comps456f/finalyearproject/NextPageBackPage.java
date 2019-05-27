@@ -50,7 +50,7 @@ public class NextPageBackPage extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    String url = "http://192.168.240.17:3000/api/viewpost/0";
+    String url = "https://raymondsfypapi.herokuapp.com/api/viewpost/0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,6 @@ public class NextPageBackPage extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         final LinearLayout forumTable = (LinearLayout) findViewById(R.id.forum);
-        final GridLayout content = (GridLayout) findViewById(R.id.mainContent);
 
         final Context appContext = getApplicationContext();
 
@@ -91,14 +90,14 @@ public class NextPageBackPage extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(postNo);
                         objectId[postNo] = jsonObject.getString("_id");
                         postTitle[postNo] = jsonObject.getString("title");
-                        userName[postNo] = jsonObject.getString("name");
+                        userName[postNo] = jsonObject.getJSONArray("comment").getJSONObject(0).getString("userId");
                         postDate[postNo] = jsonObject.getString("date");
 
                         TextView userNameTd = new TextView(appContext);
                         userNameTd.setText(userName[postNo]);
                         userNameTd.setTextColor(Color.BLACK);
                         userNameTd.setTextSize(20);
-                        content.addView(userNameTd);
+                        forumTable.addView(userNameTd);
 
                         Button postTitleTd = new Button(appContext);
                         postTitleTd.setText(postTitle[postNo]);
@@ -107,7 +106,7 @@ public class NextPageBackPage extends AppCompatActivity {
                         postTitleTd.setId(postNo);
                         postTitleTd.setTag(postNo);
                         //postTitleTd.setOnClickListener(appContext);
-                        content.addView(postTitleTd);
+                        forumTable.addView(postTitleTd);
                         Log.e("url", objectId[postNo]);
                         postTitleTd.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -116,7 +115,7 @@ public class NextPageBackPage extends AppCompatActivity {
                                 Log.e("Button",view.getTag().toString());
                                 Intent Intent = new Intent(NextPageBackPage.this,SoloPost.class);
                                 //Log.e("url", objectId[postNo]);
-                                Intent.putExtra("url","http://192.168.240.17:3000/api/viewIndpost/"+objectId[Integer.parseInt(view.getTag().toString())]);
+                                Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewpost/"+objectId[Integer.parseInt(view.getTag().toString())]);
                                 //finish();
                                 startActivity(Intent);
                             }
@@ -126,9 +125,27 @@ public class NextPageBackPage extends AppCompatActivity {
                         postDateTd.setText(postDate[postNo]);
                         postDateTd.setTextColor(Color.BLACK);
                         postDateTd.setTextSize(20);
-                        content.addView(postDateTd);
+                        forumTable.addView(postDateTd);
 
                     }
+
+                    int createButtonId = -2;
+                    Button createButton = new Button(appContext);
+                    createButton.setText("Create Post");
+                    createButton.setTextColor(Color.BLACK);
+                    createButton.setTextSize(15);
+                    createButton.setId(createButtonId);
+                    forumTable.addView(createButton);
+
+                    createButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent Intent = new Intent(NextPageBackPage.this,CreatePost.class);
+                            finish();
+                            startActivity( Intent);
+                        }
+                    });
+
 
                     int nextButtonId = 500;
                     Button nextPage = new Button(appContext);
@@ -136,7 +153,7 @@ public class NextPageBackPage extends AppCompatActivity {
                     nextPage.setTextColor(Color.BLACK);
                     nextPage.setTextSize(15);
                     nextPage.setId(nextButtonId);
-                    content.addView(nextPage);
+                    forumTable.addView(nextPage);
 
                     if(!(counter==0)){
                         int backBbuttonId = 501;
@@ -145,14 +162,14 @@ public class NextPageBackPage extends AppCompatActivity {
                         backPage.setTextColor(Color.BLACK);
                         backPage.setTextSize(15);
                         backPage.setId(backBbuttonId);
-                        content.addView(backPage);
+                        forumTable.addView(backPage);
 
                         backPage.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 Intent Intent = new Intent(NextPageBackPage.this,NextPageBackPage.class);
                                 counter -= 1;
-                                Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/"+counter+"");
+                                Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewpost/"+counter+"");
                                 finish();
                                 startActivity( Intent);
                             }
@@ -164,7 +181,7 @@ public class NextPageBackPage extends AppCompatActivity {
                         public void onClick(View view) {
                             Intent Intent = new Intent(NextPageBackPage.this,NextPageBackPage.class);
                             counter += 1;
-                            Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/"+counter+"");
+                            Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewpost/"+counter+"");
                             finish();
                             startActivity( Intent);
                         }

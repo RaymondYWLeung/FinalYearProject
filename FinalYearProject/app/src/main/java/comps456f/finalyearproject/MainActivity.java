@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        String nickName = getSharedPreferences("user", MODE_PRIVATE).getString("USER", "Guest");
+        String nickName = getSharedPreferences("user", MODE_PRIVATE).getString("NICKNAME", "Guest");
 
         //if(nickName.equals("Login")){
 

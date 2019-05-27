@@ -45,7 +45,7 @@ public class Examination2 extends AppCompatActivity {
     String questionAnswer = "";
     String questionType = "";
     //String url = "https://raymondsfypapi.herokuapp.com/api/examquestion/Exam01";
-    String url = "http://192.168.240.17:3000/api/templateQuestion/Exam02";
+    String url = "https://raymondsfypapi.herokuapp.com/api/templateQuestion/Exam02";
 
     //View for fib
     ArrayList<String> fibAns = new ArrayList<>();

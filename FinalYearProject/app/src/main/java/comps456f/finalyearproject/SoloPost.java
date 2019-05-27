@@ -20,6 +20,7 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Space;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -45,11 +46,11 @@ public class SoloPost extends AppCompatActivity {
 
     private String objectId = "";
     private String postTitle = "";
-    private String userName = "";
+    private String userId= "";
     private String postDate = "";
     private String postContent = "";
     private String url;
-    private int counter;
+    //private int counter;
 
     private ProgressDialog progressDialog;
 
@@ -64,7 +65,7 @@ public class SoloPost extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        final LinearLayout forumTable = (LinearLayout) findViewById(R.id.forum);
+        final LinearLayout forumTable = (LinearLayout) findViewById(R.id.soloPost);
         final GridLayout content = (GridLayout) findViewById(R.id.mainContent);
 
         final Context appContext = getApplicationContext();
@@ -73,8 +74,9 @@ public class SoloPost extends AppCompatActivity {
         progressDialog.setMessage("Loading Post ....");
         progressDialog.show();
 
-        counter = Integer.parseInt(url.substring(url.length()-1,url.length()));
+        //counter = Integer.parseInt(url.substring(url.length()-1,url.length()));
 
+        Log.e("url", url);
 
         //HTTP GET ok
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -86,15 +88,17 @@ public class SoloPost extends AppCompatActivity {
 
                         objectId = response.getString("_id");
                         postTitle = response.getString("title");
-                        userName = response.getString("name");
+                        userId = response.getJSONArray("comment").getJSONObject(0).getString("userId");
                         postDate = response.getString("date");
-                        postContent = response.getString("content");
+                        postContent = response.getJSONArray("comment").getJSONObject(0).getString("content");
+
+
 
                         String comment[] = new String[response.getJSONArray("comment").length()];
                         String commentUser[] = new String[response.getJSONArray("comment").length()];
 
-                        for(int i=0; i<response.getJSONArray("comment").length(); i++){
-                            commentUser[i] = response.getJSONArray("comment").getJSONObject(i).getString("name");
+                        for(int i=1; i<response.getJSONArray("comment").length(); i++){
+                            commentUser[i] = response.getJSONArray("comment").getJSONObject(i).getString("userId");
                             comment[i] = response.getJSONArray("comment").getJSONObject(i).getString("content");
                         }
 
@@ -103,16 +107,39 @@ public class SoloPost extends AppCompatActivity {
 
 
                         TextView userNameTd = new TextView(appContext);
-                        userNameTd.setText(userName);
+                        userNameTd.setText(userId);
                         userNameTd.setTextColor(Color.BLACK);
                         userNameTd.setTextSize(20);
-                        content.addView(userNameTd);
+                    forumTable.addView(userNameTd);
+
+                        Space space = new Space(appContext);
+                        space.setMinimumWidth(20);
+                    forumTable.addView(space);
 
                         TextView contentTd = new TextView(appContext);
                         contentTd.setText(postContent);
                         contentTd.setTextColor(Color.BLACK);
                         contentTd.setTextSize(20);
-                        content.addView(contentTd);
+                    forumTable.addView(contentTd);
+
+                        int createButtonId = -10;
+                        Button createButton = new Button(appContext);
+                        createButton.setText("Create Comment");
+                        createButton.setTextColor(Color.BLACK);
+                        createButton.setTextSize(15);
+                        createButton.setId(createButtonId);
+                        content.addView(createButton);
+
+                        createButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent Intent = new Intent(SoloPost.this,CreateComment.class);
+                                Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewpost/"+objectId+"/comment");
+                                finish();
+                                startActivity(Intent);
+                            }
+                        });
+
 
                         for(int i=0; i<commentUser.length; i++){
 
@@ -122,12 +149,17 @@ public class SoloPost extends AppCompatActivity {
                             commentUserNameTd.setTextSize(20);
                             content.addView(commentUserNameTd);
 
+                            Space spaceForComment = new Space(appContext);
+                            spaceForComment.setMinimumWidth(20);
+                            content.addView(spaceForComment);
+
                             TextView commentContentTd = new TextView(appContext);
                             commentContentTd.setText(comment[i]);
                             commentContentTd.setTextColor(Color.BLACK);
                             commentContentTd.setTextSize(20);
                             content.addView(commentContentTd);
                         }
+
 
 
                     progressDialog.dismiss();

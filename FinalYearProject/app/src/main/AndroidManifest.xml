@@ -57,10 +57,12 @@
         <activity
             android:name=".ForumFrontPage"
             android:label="@string/title_activity_forum_front_page" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".NextPageBackPage" />
         <activity android:name=".SoloPost" />
-
+        <activity android:name=".CreatePost" />
+        <activity android:name=".CreateComment" />
+        <activity android:name=".Comment"></activity>
     </application>
 
 </manifest>

@@ -45,7 +45,7 @@ public class Examination1 extends AppCompatActivity {
     String questionAnswer = "";
     String questionType = "";
     //String url = "https://raymondsfypapi.herokuapp.com/api/examquestion/Exam01";
-    String url = "http://192.168.240.17:3000/api/templateQuestion/Exam01";
+    String url = "https://raymondsfypapi.herokuapp.com/api/templateQuestion/Exam01";
 
     //View for fib
     ArrayList<String> fibAns = new ArrayList<>();
@@ -104,6 +104,8 @@ public class Examination1 extends AppCompatActivity {
                         questionTitle = jsonObject.getString("QuestionTitle");
                         questionTitle = questionTitle.replaceAll("/n", "\n").replaceAll("/t", "\t").replaceAll("\\\\", " ");
                         questionAnswer = jsonObject.getString("Answer");
+
+                        //Log.e(questionNumber,questionAnswer);
 
                         for(int i=0; i<questionNoArrayList.size(); i++) {
                             if (questionNoArrayList.get(i).toString().equals(questionNumber)) {
@@ -204,6 +206,7 @@ public class Examination1 extends AppCompatActivity {
                         }
                         mcIdCount = 100 + 10;
                         mcAns.add(mc.get(i).getAnswer());
+                        Log.e("answer", mc.get(i).getAnswer());
                         rg.setId(i);
                         no = i;
 

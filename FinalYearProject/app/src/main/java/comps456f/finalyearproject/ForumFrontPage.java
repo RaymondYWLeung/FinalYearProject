@@ -44,12 +44,12 @@ public class ForumFrontPage extends AppCompatActivity {
 
     private String[] objectId;
     private String[] postTitle;
-    private String[] userName;
+    private String[] userId;
     private String[] postDate;
 
     private ProgressDialog progressDialog;
 
-    String url = "http://192.168.240.17:3000/api/viewpost/0";
+    String url = "https://raymondsfypapi.herokuapp.com/api/viewpost/0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,8 @@ public class ForumFrontPage extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         final LinearLayout forumTable = (LinearLayout) findViewById(R.id.forum);
-        final GridLayout content = (GridLayout) findViewById(R.id.mainContent);
+
+
 
         final Context appContext = getApplicationContext();
 
@@ -80,21 +81,21 @@ public class ForumFrontPage extends AppCompatActivity {
                     //forumTable.addView(td);
                     objectId = new String[response.length()];
                     postTitle = new String[response.length()];
-                    userName = new String[response.length()];
+                    userId = new String[response.length()];
                     postDate = new String[response.length()];
 
                     for (int postNo = 0; postNo < response.length(); postNo++) {
                         JSONObject jsonObject = response.getJSONObject(postNo);
                         objectId[postNo] = jsonObject.getString("_id");
                         postTitle[postNo] = jsonObject.getString("title");
-                        userName[postNo] = jsonObject.getString("name");
+                        userId[postNo] = jsonObject.getJSONArray("comment").getJSONObject(0).getString("userId");
                         postDate[postNo] = jsonObject.getString("date");
 
                         TextView userNameTd = new TextView(appContext);
-                        userNameTd.setText(userName[postNo]);
+                        userNameTd.setText(userId[postNo]);
                         userNameTd.setTextColor(Color.BLACK);
                         userNameTd.setTextSize(20);
-                        content.addView(userNameTd);
+                        forumTable.addView(userNameTd);
 
                         Button postTitleTd = new Button(appContext);
                         postTitleTd.setText(postTitle[postNo]);
@@ -103,7 +104,7 @@ public class ForumFrontPage extends AppCompatActivity {
                         postTitleTd.setId(postNo);
                         postTitleTd.setTag(postNo);
                         //postTitleTd.setOnClickListener(appContext);
-                        content.addView(postTitleTd);
+                        forumTable.addView(postTitleTd);
                         Log.e("url", objectId[postNo]);
                         postTitleTd.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -112,8 +113,8 @@ public class ForumFrontPage extends AppCompatActivity {
                                 Log.e("Button",view.getTag().toString());
                                 Intent Intent = new Intent(ForumFrontPage.this,SoloPost.class);
                                 //Log.e("url", objectId[postNo]);
-                                Intent.putExtra("url","http://192.168.240.17:3000/api/viewIndpost/"+objectId[Integer.parseInt(view.getTag().toString())]);
-                                //finish();
+                                Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewIndpost/"+objectId[Integer.parseInt(view.getTag().toString())]);
+                                finish();
                                 startActivity(Intent);
                             }
                         });
@@ -122,9 +123,27 @@ public class ForumFrontPage extends AppCompatActivity {
                         postDateTd.setText(postDate[postNo]);
                         postDateTd.setTextColor(Color.BLACK);
                         postDateTd.setTextSize(20);
-                        content.addView(postDateTd);
+                        forumTable.addView(postDateTd);
 
                     }
+
+                    int createButtonId = -2;
+                    Button createButton = new Button(appContext);
+                    createButton.setText("Create Post");
+                    createButton.setTextColor(Color.BLACK);
+                    createButton.setTextSize(15);
+                    createButton.setId(createButtonId);
+                    forumTable.addView(createButton);
+
+                    createButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent Intent = new Intent(ForumFrontPage.this,CreatePost.class);
+                            finish();
+                            startActivity( Intent);
+                        }
+                    });
+
 
                     int buttonId = -1;
                     Button nextPage = new Button(appContext);
@@ -132,17 +151,18 @@ public class ForumFrontPage extends AppCompatActivity {
                     nextPage.setTextColor(Color.BLACK);
                     nextPage.setTextSize(15);
                     nextPage.setId(buttonId);
-                    content.addView(nextPage);
+                    forumTable.addView(nextPage);
 
                     nextPage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             Intent Intent = new Intent(ForumFrontPage.this,NextPageBackPage.class);
-                            Intent.putExtra("url","http://192.168.240.17:3000/api/viewpost/1");
+                            Intent.putExtra("url","https://raymondsfypapi.herokuapp.com/api/viewpost/1");
                             finish();
                             startActivity( Intent);
                         }
                     });
+
 
                     progressDialog.dismiss();
 

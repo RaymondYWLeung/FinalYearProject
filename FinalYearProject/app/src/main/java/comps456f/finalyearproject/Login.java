@@ -73,8 +73,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         String mUsername = et_user.getText().toString();
         String mPassword = et_password.getText().toString();
         String mNickname = et_nickname.getText().toString();
-        String login_url = "http://192.168.240.17:3000/users/login";
-        String reg_url =  "http://192.168.240.17:3000/users/register";
+        String login_url = "https://raymondsfypapi.herokuapp.com/users/login";
+        String reg_url =  "https://raymondsfypapi.herokuapp.com/users/register";
         final Context appContext = getApplicationContext();
         if(!booReg && !booSign) {
             et_user.setError("Please select Sign in or Register");
